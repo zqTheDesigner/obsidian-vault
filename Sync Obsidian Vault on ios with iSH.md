@@ -37,3 +37,5 @@ git push
 - Work normally on Obsidian app
 - iPad > iSH (mount and cd again), `git push`
 - To un-mount: `umount /mnt/zq/Obsidian`
+
+[[test]]
