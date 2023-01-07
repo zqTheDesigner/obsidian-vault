@@ -28,6 +28,7 @@ git push
 
 git branch -M main
 git pull --rebase
+# if there is conflicts, use git rebase —skip to skip them. 
 git push
 
 ```
@@ -38,4 +39,3 @@ git push
 - iPad > iSH (mount and cd again), `git push`
 - To un-mount: `umount /mnt/zq/Obsidian`
 
-[[test]]
