@@ -2,7 +2,7 @@
 
 ### iPad preparation
 - Download iSH Shell App
-- [[Install and set up Git with iSH]]
+- [[Install and set up Git]]
 
 ### Initialize iOS Obsidian vault via iSH git repo
 - iPad > Obsidian > Create a new vault, exit Obsidian 
@@ -28,7 +28,8 @@ git push
 
 git branch -M main
 git pull --rebase
-# if there is conflicts, use git rebase —skip to skip them. 
+# if there is conflicts, likely because of the default configuration json files from obsidian, use git rebase —skip to skip them. 
+
 git push
 
 ```
