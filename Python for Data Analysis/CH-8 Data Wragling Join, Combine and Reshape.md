@@ -167,3 +167,97 @@ df1.combine_first(df2)
 Rearranging tabular data
 
 ## Reshaping with Hierarchical Indexing
+**stack** "Rotates" of pivots from the columns in the data to rows
+**unstack** Pivots from the rows into the columns
+```python
+data = pd.DataFrame(
+    np.arange(6).reshape((2, 3)),
+    index=pd.Index(["Ohio", "Calorado"], name="state"),
+    columns=pd.Index(["one", "two", "three"], name='number'),
+)
+
+# Moves the column index to row index
+data.stack()
+data.unstack()
+
+# Unstack different level by passing a level number or name
+data.unstack(level='state')
+```
+Unstack may introduce missing values
+```python
+s1 = pd.Series([0, 1, 2, 3], index=['a', 'b', 'c', 'd'], dtype="Int64", name='one')
+
+s2 = pd.Series([4, 5, 6], index=['c', 'd', 'e'], dtype='Int64', name='two')
+
+data2 = pd.concat([s1, s2], keys=['one', 'two'])
+
+# After unstack, it will attach the columns to the right 
+data2.unstack()
+# Which is same as
+pd.merge(s1, s2, left_index=True, right_index=True, how='outer').T
+```
+
+When unstack in a DataFrame, the level unstacked becomes the lowest level in result.
+```python
+result = data.unstack()
+
+df = pd.DataFrame(
+    {"left": result, "right": result + 5},
+    columns=pd.Index(["left", "right"], name="side"),
+)
+
+df.unstack(level='state').stack(level='side')
+```
+
+## Pivoting "Long" to "Wide" format
+```python
+data = pd.read_csv("./datasets/macrodata.csv")
+
+data = data.loc[:, ["year", "quarter", "realgdp", "infl", "unemp"]]
+
+data.head()
+
+# use pandas.PeriodIndex (repersents time intervals)
+# df.pop will return the column and delete it from dataframe
+periods = pd.PeriodIndex(
+    year=data.pop("year"), quarter=data.pop("quarter"), name="date"
+)
+
+periods
+
+data.index = periods.to_timestamp("D")
+
+data = data.reindex(columns=['realgdp', 'infl', 'unemp'])
+data.columns.name = 'item'
+
+long_data = (data.stack().reset_index().rename(columns={0: 'value'}))
+
+# Pivot long data to wide data
+pivoted = long_data.pivot(index='date', columns='item', values='value')
+
+# By omitting the last argument, obtain a DataFrame with hierarchial columns
+pivoted = long_data.pivot(index='date', columns='item')
+
+unstacked = long_data.set_index(['date', 'item']).unstack(level='item')
+```
+
+## Pivoting "Wide" to "Long" format
+In inverse operation of pivot for DataFrames is pandas.melt
+Merges multiple columns in to one
+
+```python
+df = pd.DataFrame(
+    {"key": ["foo", "bar", "baz"], "A": [1, 2, 3], "B": [4, 5, 6], "C": [7, 8, 9]}
+)
+
+melted = df.melt(id_vars="key")
+
+# Use pivot to reshape the data back
+melted.pivot(index='key', columns='variable', values='value')
+
+
+# Specify the subset of columns to use as value columns
+# id_vars are group identifiers
+pd.melt(df, id_vars='key', value_vars=['A', 'B'])
+```
+
