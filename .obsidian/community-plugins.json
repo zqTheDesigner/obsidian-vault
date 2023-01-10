@@ -1,4 +1,5 @@
 [
   "obsidian-languagetool-plugin",
-  "obsidian-format-code"
+  "obsidian-format-code",
+  "obsidian-frontmatter-tag-suggest"
 ]

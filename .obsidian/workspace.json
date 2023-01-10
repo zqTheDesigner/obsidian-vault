@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Python for Data Analysis/CH-8 Data Wragling Join, Combine and Reshape.md",
+                "file": "Python for Data Analysis/CH-9 Plotting and Visualization.md",
                 "mode": "source",
                 "source": false
               }
@@ -23,16 +23,11 @@
             "id": "32396763d82b49da",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Python for Data Analysis/CH-9 Plotting and Visualization.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "graph",
+              "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -61,7 +56,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#matplotlib",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -78,7 +73,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -102,9 +98,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
-                "showSearch": false,
+                "showSearch": true,
                 "searchQuery": "",
-                "backlinkCollapsed": false,
+                "backlinkCollapsed": true,
                 "unlinkedCollapsed": true
               }
             }
@@ -142,12 +138,12 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -158,9 +154,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "32396763d82b49da",
+  "active": "b729119b76b2f466",
   "lastOpenFiles": [
     "Python for Data Analysis/CH-8 Data Wragling Join, Combine and Reshape.md",
+    "Python for Data Analysis/CH-9 Plotting and Visualization.md",
     "Install and set up Git.md",
     "Sync Obsidian Vault on ios with iSH.md",
     "Set up ssh.md",
