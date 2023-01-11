@@ -56,7 +56,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#matplotlib",
+                "query": "tag:#matplotlib/drawings",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -154,7 +154,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b729119b76b2f466",
+  "active": "e3d27fbb5f85a5fb",
   "lastOpenFiles": [
     "Python for Data Analysis/CH-8 Data Wragling Join, Combine and Reshape.md",
     "Python for Data Analysis/CH-9 Plotting and Visualization.md",

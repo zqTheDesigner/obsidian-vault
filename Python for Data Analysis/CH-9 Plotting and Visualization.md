@@ -159,3 +159,130 @@ ax.legend(loc="upper right")
 
 ```
 
+## Annotations and Drawings on a Subplot
+#matplotlib/annotations 
+
+
+Plot annotations: text, arrows, other shapes
+Add annotations with `text`, `arrow` and `annotate` functions
+
+`ax.text(a, y, 'Hello world', family='monospace', fontsize=10)`
+
+```python
+from datetime import datetime
+
+fig, ax = plt.subplots()
+
+data = pd.read_csv("./datasets/spx.csv", index_col=0, parse_dates=True)
+
+spx = data["SPX"]
+
+spx.plot(ax=ax, color="black")
+
+crisis_data = [
+    (datetime(2007, 10, 11), "Peak of bull market"),
+    (datetime(2008, 3, 12), "Bear Sterns Fils"),
+    (datetime(2008, 9, 15), "Lehman Bankruptcy"),
+]
+
+# ax.annotate method can draw labels at the indicated x and y coordinates
+for date, label in crisis_data:
+    ax.annotate(
+        label,
+        xy=(date, spx.asof(date) + 75),
+        xytext=(date, spx.asof(date) + 225),
+        arrowprops=dict(facecolor="black", headwidth=2, width=2, headlength=4),
+        horizontalalignment="left",
+        verticalalignment="top",
+    )
+
+# Zoom in on 2007 - 2010, manually set the start and end boundaries for the plot
+ax.set_xlim(["1/1/2007", "1/1/2011"])
+ax.set_ylim([600, 1800])
+
+ax.set_title("Important dates in the 2008 to 2001")
+
+```
+
+#### Drawing shapes
+#matplotlib/drawings 
+
+matplotlib `patches` object represent common shapes
+Full set can be found in `matplotlib.patches`
+
+To add a shape to a plot, you create the patch object and add it to a subplot ax by passing the patch to ax.add_patch
+
+```python
+fig, ax = plt.subplots()
+
+rect = plt.Rectangle((0.2, 0.75), 0.4, 0.15, color="black", alpha=0.3)
+circ = plt.Circle((0.7, 0.2), 0.15, color="blue", alpha=0.3)
+pgon = plt.Polygon([[0.15, 0.15], [0.34, 0.4], [0.2, 0.6]], color="green", alpha=0.5)
+
+ax.add_patch(rect)
+ax.add_patch(circ)
+ax.add_patch(pgon)
+
+```
+
+## Saving Plots to File
+#matplotlib/save-to-file
+
+Save the active figure using figure object's `savefig` instance method.
+
+`fig.savefig('figpath.pmg', dpi=400)`
+
+The fie type is inferred from the file extension
+
+## matplotlib Configuration
+#matplotlib/configuration
+
+Use `plt.rc` method to modify the configuration 
+`plt.rc('figure', figsize=(10,10))`
+
+First argument to rc is the component you wish to customize 
+Followed by a sequence of keyword arguments indicating the new parameters
+
+`plt.rc('font', family='monospace', weight='bold', size=8)`
+
+All current configuration settings can be found in `plt.rcParams`
+
+matplotlib comes with a configuration file `matplotlibrc` in `matplotlib/mpl-data` directory. 
+customise this file and place in home directory titled .matplotlibrc, it will be loaded each you use matplotlib 
+
+# 9.2 Plotting with pandas and seaborn
+#pandas/plotting #seaborn
+
+## Line Plots
+
+```python
+s = pd.Series(np.random.standard_normal(10).cumsum(), index=np.arange(0, 100, 10))
+
+# By default, plot() makes a line plot
+s.plot()
+```
+
+Series.plot method arguments
+
+  
+
+Series.plot method arguments
+
+| Argument | Description |
+|-|-| 
+| label | Label for plot legend |
+| ax | matplotlib subplot object to plot on, if nothing passed, use active matplotlib subplot |
+| style | style string, like 'ko--' to be passed to matplotlib |
+| alpha | The plot fill opacity (from 0 to 1) |
+| kind | Can be "area", 'bar', 'barh', 'density', 'hist', 'kde', 'line' or 'pie', default to 'line' |
+| figsize | Size of the figure object to create |
+| logx | Pass True for logarithmic scaling on the x axis; pass 'sym' for symmetric logarithm that permits negative value |
+| logy | Pass True for logarithmic scaling on the y axis | 
+| title | title to use ofr the plot | 
+| use_index | use the object index for tick labels |
+| rot | rotation of tick labels (0 to 360) |
+| xticks | Values to use for x-axis ticks |
+| yticks | Values to use for y-axis ticks | 
+| xlim | x-axis limits (e.g. [0, 10]) |
+| ylim | y-axis limits |
+| gird | display axis grid, off by default | 
