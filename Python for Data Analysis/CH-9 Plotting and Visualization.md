@@ -254,6 +254,7 @@ customise this file and place in home directory titled .matplotlibrc, it will be
 #pandas/plotting #seaborn
 
 ## Line Plots
+#pandas/plotting/line
 
 ```python
 s = pd.Series(np.random.standard_normal(10).cumsum(), index=np.arange(0, 100, 10))
@@ -267,7 +268,7 @@ Series.plot method arguments
   
 
 Series.plot method arguments
-
+#pandas/plotting/arguments
 | Argument | Description |
 |-|-| 
 | label | Label for plot legend |
@@ -285,4 +286,109 @@ Series.plot method arguments
 | yticks | Values to use for y-axis ticks | 
 | xlim | x-axis limits (e.g. [0, 10]) |
 | ylim | y-axis limits |
-| gird | display axis grid, off by default | 
+| gird | display axis grid, off by default |
+
+DataFrame's plot method plots each of its columns as a different line on the same subplot, creating a legend automatically.  
+
+```python
+df = pd.DataFrame(
+    # cumsum(0) means accumulate summary along the columns
+    np.random.standard_normal((10, 4)).cumsum(0),
+    columns=["A", "B", "C", "D"],
+    index=np.arange(0, 100, 10),
+)
+
+plt.style.use('grayscale')
+
+df.plot()
+```
+
+DataFrame specific plot arguments
+#pandas/plotting #pandas/plotting/arguments
+| Argument | Description |
+|-|-| 
+| subplots | Plot each DataFrame column in a separate subplot |
+| layouts | 2-tuple (rows, columns) providing layout of subplots |
+| sharex | If subplots = True, share the same x-axis linking ticks and limits |
+| sharey | if subplots = True, share the same y-axis |
+| legend | Add a subplot legend (True by default) | 
+| sort_columns | Plot columns in a alphabetical order, by default uses existing column order |  
+
+## Bar Plots
+#pandas/plotting/bar
+`plot.bar()` and `plot.barh()` make vertical and horizontal bar plots. 
+Series or DataFrame index will be used as the x(bar) or y(barh) ticks
+
+```python
+fix, axes = plt.subplots(2, 1)
+
+data = pd.Series(np.random.uniform(size=16), index=list("abcdefghijklmnop"))
+
+# rot=0 will make sure the labels are not rotated
+data.plot.bar(ax=axes[0], color="black", alpha=0.7, rot=0)
+
+
+data.plot.barh(ax=axes[1], color="black", alpha=0.7)
+```
+
+With a DataFrame, bar plots group the values in each row in bars, side by side, for each value.
+
+```python
+df = pd.DataFrame(
+    np.random.uniform(size=(6, 4)),
+    index=["one", "tow", "three", "four", "five", "six"],
+    columns=pd.Index(
+        ["A", "B", "C", "D"],
+        # Column name "Genus" will be used in the legend
+        name="Genus",
+    ),
+)
+
+df.plot.bar()
+
+# To stack the bar graphs
+df.plot.barh(stacked=True)
+```
+
+To visualise a Series's value frequency:
+`value_counts:s.value_counts().plot.bar()`
+
+```python
+tips = pd.read_csv('datasets/tips.csv')
+
+tips.head()
+
+# Use pandas.crosstab() function to compute a frequency table from two dataframe columns
+party_counts = pd.crosstab(tips["day"], tips["size"])
+
+party_counts = party_counts.reindex(index=["Thur", "Fri", "Sat", "Sun"])
+
+# Remove the one and six person party
+party_counts = party_counts.loc[:, 2:5]
+
+# Normalize to sum to 1
+party_pcts = party_counts.div(party_counts.sum(axis='columns'), axis='index')
+
+party_pcts.plot.bar(stacked=True)
+```
+
+Plotting with seaborn
+#seaborn 
+
+```python
+import seaborn as sns
+
+tips['tip_pct'] = tips['tip'] / (tips['total_bill'] - tips['tip'])
+
+tips.head()
+
+sns.barplot(x='tip_pct', y='day', data=tips, orient='h')
+
+# Use hue to split by additional categotical value
+sns.barplot(x='tip_pct', y="day", hue="time", data=tips, orient='h')
+```
+
+The bars are the average value of "tip_pct"
+Black lines draw on the bar represents the [[95% confidence interval]], meaning there is 5% of the values falls on left or right side of the black line, but majority of the value falls within this range. 
+
+
