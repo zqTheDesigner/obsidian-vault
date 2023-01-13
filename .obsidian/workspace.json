@@ -18,8 +18,21 @@
                 "source": false
               }
             }
+          },
+          {
+            "id": "e1c8f5e9e7368093",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Python for Data Analysis/CH-10 Data Aggregation and Group Operations.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Python for Data Analysis/CH-9 Plotting and Visualization.md",
+                "file": "Python for Data Analysis/CH-10 Data Aggregation and Group Operations.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Python for Data Analysis/CH-9 Plotting and Visualization.md",
+                "file": "Python for Data Analysis/CH-10 Data Aggregation and Group Operations.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +138,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Python for Data Analysis/CH-9 Plotting and Visualization.md"
+                "file": "Python for Data Analysis/CH-10 Data Aggregation and Group Operations.md"
               }
             }
           }
@@ -134,7 +147,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 200
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -145,14 +158,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "24d27026b38d0b47",
+  "active": "e1c8f5e9e7368093",
   "lastOpenFiles": [
-    "95% confidence interval.md",
     "Python for Data Analysis/CH-9 Plotting and Visualization.md",
+    "Sync Obsidian Vault on ios with iSH.md",
+    "Install and set up Git.md",
+    "95% confidence interval.md",
     "Untitled.canvas",
     "Python for Data Analysis/CH-8 Data Wragling Join, Combine and Reshape.md",
-    "Install and set up Git.md",
-    "Sync Obsidian Vault on ios with iSH.md",
     "Set up ssh.md",
     "test.md",
     "().md",

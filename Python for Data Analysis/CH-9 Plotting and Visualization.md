@@ -392,3 +392,101 @@ The bars are the average value of "tip_pct"
 Black lines draw on the bar represents the [[95% confidence interval]], meaning there is 5% of the values falls on left or right side of the black line, but majority of the value falls within this range. 
 
 
+## Histogram and Density Plots
+#histogram
+A histogram is a kind of bar plot that gives a discretized display of value frequency. 
+
+The data points are split into discrete, evenly spaced bins. And the number of data points in each bin is plotted. 
+
+```python
+# Displaying the frequency of each bins
+# The bin will be split the Series data in to 10 sections 
+tips['tip_pct'].plot.hist(bins=10)
+```
+
+## KDE
+#matplotlib/kde #kde
+
+density plot, formed by computing an estimate of a continuous probability distribution that might have generated the observed data. 
+The usual procedure is to approximate this distribution as a mixture of kernels - simpler distribution like the normal distribution. 
+
+density plots also known as kernel density estimate (KDE) plots.
+
+Using plot.density make a density plot
+
+KDE plot can be considered as a smoothed version of histogram plot?
+
+
+```python
+tips['tip_pct'].plot.density()
+```
+
+### Density
+#density 
+
+Density refers to the probability of a specific point or range of points within the dataset. 
+
+In a KDE, the density estimate at a given point is calculated as the sum of a set of kernels, each centred at one of the data points. The kernel is a function that assigns a weight to each data point, and the kernel density estimate is the sum of these weights across all data points. 
+
+### Scatter or Point Plots
+
+Point plots or scatter plots can examinating the relationship between two one-dimensional data series. 
+
+```python
+macro = pd.read_csv('datasets/macrodata.csv')
+
+data = macro[['cpi', 'm1', 'tbilrate', 'unemp']]
+
+trans_data = np.log(data).diff().dropna()
+# use seaborn's regplot method to make a scatter plot and fits a linear regression line
+
+ax = sns.regplot(x="m1", y="unemp", data=trans_data)
+
+ax.set(title='Changes in log(m1) versus log(unemp)')
+```
+
+Look at all the scatter plots among a group of variables - pairs plot, or scatter plot matrix
+
+use seaborn's pairplot function to place histograms or density estimates for each variables along the digonal
+
+```python
+
+# plot_kws enables us to pass down configuration options to the individual plotting calls on the off-diagonal elements. 
+sns.pairplot(trans_data, diag_kind="kde", plot_kws={"alpha": 0.2})
+
+```
+
+## Facet Grids and Categorical Data
+For datasets where we have additional grouping dimensions.
+Visualize data with many categorical variables by facet grid
+
+Two dimensional layout for plots where the data is split across the plots on each axis based on the distinct value of a certain variable
+
+Use catplot function to display plots split bny categorical variables 
+
+```python
+sns.catplot(
+    x="day", y="tip_pct", hue="time", col="smoker", kind="bar", data=tips[tips.tip_pct < 1]
+)
+
+sns.catplot(
+    x="day",
+    y="tip_pct",
+    row="time",
+    col="smoker",
+    kind="bar",
+    data=tips[tips.tip_pct < 1],
+)
+
+# Box plot (show the median. quartiles and outliers)
+sns.catplot(
+    y="day",
+    x="tip_pct",
+    kind="box",
+    data=tips[tips.tip_pct < 0.3],
+),
+
+```
+
+Create more general facet frid with general `seaborn.FacetGrid` class
+
