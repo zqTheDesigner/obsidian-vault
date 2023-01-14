@@ -35,7 +35,11 @@ git push
 ```
 
 ### Normal work cycle
-- iPad > iSH `mount -t ios null /mnt/zq/Obsidian; cd /mnt/zq/Obsidian; git pull`
+- iPad > iSH 
+	- `mount -t ios null /mnt/zq/Obsidian`
+	- Sometimes don't need to mount, if git pull failed. 
+	- `cd /mnt/zq/Obsidian` 
+	- `git pull`
 - Work normally on Obsidian app
 - iPad > iSH (mount and cd again), `git push`
 - To un-mount: `umount /mnt/zq/Obsidian`

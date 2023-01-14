@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Articles Reading Notes/Conscious Design Systems.md",
+                "file": "Sync Obsidian Vault on ios with iSH.md",
                 "mode": "source",
                 "source": false
               }
@@ -109,7 +109,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Articles Reading Notes/Conscious Design Systems.md",
+                "file": "Sync Obsidian Vault on ios with iSH.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +126,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Articles Reading Notes/Conscious Design Systems.md",
+                "file": "Sync Obsidian Vault on ios with iSH.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Articles Reading Notes/Conscious Design Systems.md"
+                "file": "Sync Obsidian Vault on ios with iSH.md"
               }
             }
           }
@@ -171,8 +171,8 @@
   },
   "active": "b849ff8b0066d1a8",
   "lastOpenFiles": [
-    "Books To Read/<Design for Real Life>.md",
     "Articles Reading Notes/Conscious Design Systems.md",
+    "Books To Read/<Design for Real Life>.md",
     "Books Reading Notes/<Python for Data Analysis>/CH-8 Data Wragling Join, Combine and Reshape.md",
     "Bandwagon Effect.md",
     "Books Reading Notes/<Python for Data Analysis>/CH-10 Data Aggregation and Group Operations.md",
