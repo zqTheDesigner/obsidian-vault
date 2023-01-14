@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Python for Data Analysis/CH-9 Plotting and Visualization.md",
+                "file": "Book Notes/Python for Data Analysis/CH-9 Plotting and Visualization.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,14 +25,38 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Python for Data Analysis/CH-10 Data Aggregation and Group Operations.md",
+                "file": "Book Notes/Python for Data Analysis/CH-10 Data Aggregation and Group Operations.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "27a771311d0355c5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Machine Learning/K-Means VS KNN.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "16cdc8fb1b6d3c3e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Book Notes/Python for Data Analysis/CH-10 Data Aggregation and Group Operations.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -98,7 +122,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Python for Data Analysis/CH-10 Data Aggregation and Group Operations.md",
+                "file": "Book Notes/Python for Data Analysis/CH-10 Data Aggregation and Group Operations.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -115,7 +139,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Python for Data Analysis/CH-10 Data Aggregation and Group Operations.md",
+                "file": "Book Notes/Python for Data Analysis/CH-10 Data Aggregation and Group Operations.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -138,7 +162,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Python for Data Analysis/CH-10 Data Aggregation and Group Operations.md"
+                "file": "Book Notes/Python for Data Analysis/CH-10 Data Aggregation and Group Operations.md"
               }
             }
           }
@@ -158,17 +182,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e1c8f5e9e7368093",
+  "active": "16cdc8fb1b6d3c3e",
   "lastOpenFiles": [
-    "Python for Data Analysis/CH-9 Plotting and Visualization.md",
+    "Machine Learning/Iterative Imputation.md",
+    "Machine Learning/K-Means VS KNN.md",
+    "Machine Learning/Untitled.canvas",
+    "Book Notes/Python for Data Analysis/CH-8 Data Wragling Join, Combine and Reshape.md",
+    "Book Notes/Python for Data Analysis/CH-10 Data Aggregation and Group Operations.md",
+    "Book Notes/Python for Data Analysis/CH-9 Plotting and Visualization.md",
     "Sync Obsidian Vault on ios with iSH.md",
     "Install and set up Git.md",
     "95% confidence interval.md",
-    "Untitled.canvas",
-    "Python for Data Analysis/CH-8 Data Wragling Join, Combine and Reshape.md",
-    "Set up ssh.md",
-    "test.md",
-    "().md",
-    "Test page.md"
+    "Untitled.canvas"
   ]
 }
