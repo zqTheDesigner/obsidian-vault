@@ -4,22 +4,27 @@
     "type": "split",
     "children": [
       {
-        "id": "a1996b7e9beb78d6",
+        "id": "f3dd74374120cb16",
         "type": "tabs",
         "children": [
           {
-            "id": "790d44a68bf5582d",
+            "id": "418b8f787b500db3",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Install and set up Git with iSH.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
+            }
+          },
+          {
+            "id": "1926e92b43710072",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +90,6 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "Install and set up Git with iSH.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -102,7 +106,6 @@
         "state": {
           "type": "outgoing-link",
           "state": {
-            "file": "Install and set up Git with iSH.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -113,15 +116,13 @@
         "type": "leaf",
         "state": {
           "type": "outline",
-          "state": {
-            "file": "Install and set up Git with iSH.md"
-          }
+          "state": {}
         }
       }
     ],
     "currentTab": 0
   },
-  "active": "790d44a68bf5582d",
+  "active": "1926e92b43710072",
   "lastOpenFiles": [
     "Sync Obsidian Vault on ios with iSH.md",
     "Install and set up Git with iSH.md"
