@@ -4,27 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "f3dd74374120cb16",
+        "id": "8d9c2eaaeca1d0c4",
         "type": "tabs",
         "children": [
           {
-            "id": "418b8f787b500db3",
+            "id": "ad5962b441330f60",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
-            }
-          },
-          {
-            "id": "1926e92b43710072",
-            "type": "leaf",
-            "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Sync Obsidian Vault on ios with iSH.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -90,6 +85,7 @@
         "state": {
           "type": "backlink",
           "state": {
+            "file": "Sync Obsidian Vault on ios with iSH.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -106,6 +102,7 @@
         "state": {
           "type": "outgoing-link",
           "state": {
+            "file": "Sync Obsidian Vault on ios with iSH.md",
             "linksCollapsed": false,
             "unlinkedCollapsed": true
           }
@@ -116,14 +113,18 @@
         "type": "leaf",
         "state": {
           "type": "outline",
-          "state": {}
+          "state": {
+            "file": "Sync Obsidian Vault on ios with iSH.md"
+          }
         }
       }
     ],
     "currentTab": 0
   },
-  "active": "1926e92b43710072",
+  "active": "ad5962b441330f60",
   "lastOpenFiles": [
+    "Machine Learning/Iterative Imputation.md",
+    "Machine Learning/K-Means VS KNN.md",
     "Sync Obsidian Vault on ios with iSH.md",
     "Install and set up Git with iSH.md"
   ]
