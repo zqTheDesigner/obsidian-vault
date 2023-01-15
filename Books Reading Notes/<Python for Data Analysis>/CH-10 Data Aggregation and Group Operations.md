@@ -80,9 +80,9 @@ Use `GroupBy.size` method to return a Series containing group sizes. Any missing
 df.groupby(['key1', 'key2'], dropna=False).size().unstack()
 ```
 
-Count: Will count how many data in each columns belongs to the key group. Count is more to get the relationship between key group and other groups 
+**Count**: Will count how many data in each columns belongs to the key group. Count is more to get the relationship between key group and other groups 
 
-Size: How many rows belongs to each key group, size is to get the information about the key grout itself. 
+**Size**: How many rows belongs to each key group, size is to get the information about the key grout itself. 
 
 ```python
 df.groupby('key1').count()
@@ -132,3 +132,97 @@ df[['data1','data2']]
 df[['key1', 'key2']]
 ```
 
+## Selecting a Column or Subset of Columns
+
+Indexing a GroupBy object created from a DataFrame with a column name or array of column names
+
+```python
+df.groupby('key1')['data1']
+# Same as 
+df['data1'].groupby(df['key1'])
+
+# To aggregate only a few columns
+# To only compute means for the data 2 column
+df.groupby(['key1', 'key2'])[['data2']].mean()
+```
+
+## Grouping with Dictionaries and Series
+
+Use a dictionary to re-group the DataFrame
+```python
+people = pd.DataFrame(
+    np.random.standard_normal((5, 5)),
+    columns=["a", "b", "c", "d", "e"],
+    index=["Joe", "Steve", "Wanda", "Jill", "Trey"],
+)
+
+people.iloc[2:3, [1,2]] = np.nan
+mapping = {"a": "red", "b": "red", "c": "blue", "d": "blue", "e": "red", "f": "orange"}
+
+by_column = people.groupby(mapping, axis="columns")
+
+by_column.sum()
+
+# Group by pandas.Series
+map_series = pd.Series(mapping)
+people.groupby(map_series, axis="columns").count()
+```
+
+
+## Grouping with Functions
+Any function passed as a group key will be called once per index value, with the return values being used as the group names. 
+
+```python
+people.groupby(len).sum()
+```
+
+## Grouping by Index Levels
+Aggregate using one of the levles of an axis index. 
+
+
+```python
+columns = pd.MultiIndex.from_arrays(
+    [["US", "US", "US", "JP", "JP"], [1, 3, 5, 1, 3]], names=["city", "tenor"]
+)
+
+hier_df = pd.DataFrame(np.random.standard_normal((4, 5)), columns=columns)
+
+hier_df
+
+# To group by level, pass the level number or name using level keyword
+hier_df.groupby(level="city", axis='columns').count()
+```
+
+# 10.2 Data Aggregation
+
+Aggregation refer to any data transformation that produces scalar values form arrays. 
+
+Optimized groupby methods
+
+| Function Name | Description |
+| - | - |
+| any, all | return True is any (one or more values) or all none-Na values are "truthy" | 
+| count | Number of non-NA values | 
+| cumin, cummax | Cumulative minimum and maximum of no-NA values | 
+| cumsum | Cumulative sum of non-NA values |
+| cumprod | Cumulative product of non-NA values |
+| first, last | First and last non-NA values |
+| mean | Mean of non-NA values |
+| median | Arithemetic median of non-NA values |
+| min, max | Minimum and maximum of non-NA values |
+| nth | Retrieve value that would appear at position n with the data in sorted order |
+| ohlc | Compute four "open-high-low-close" statistics for time series-like data. |
+| prod | product of non-NA values | 
+| quantile | Compute sample quantile | 
+| rand | Ordinal ranks of non-NA values, like calling Series.rank |
+| size | Compute group sizes, returning result as a Series | 
+| std, var | Sample standard deviation and variance | 
+ 
+Tp use your own aggregation functions, pass any function that aggregates an array to the aggregate methid or its short alias agg:
+
+```python
+def peak_to_peak(arr):
+	return arr.max() - arr.min()
+
+grouped.agg(peak_to_peak)
+```

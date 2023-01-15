@@ -4,40 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "f211d0646d0d8e50",
+        "id": "6880687c3c9da5c9",
         "type": "tabs",
         "children": [
           {
-            "id": "b849ff8b0066d1a8",
+            "id": "961f436f9cfe8936",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Sync Obsidian Vault on ios with iSH.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "70f230dc54c99f1f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Books To Read/<Design for Real Life>.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "424126bc916ccb4e",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Bandwagon Effect.md",
+                "file": "Books Reading Notes/<Python for Data Analysis>/CH-10 Data Aggregation and Group Operations.md",
                 "mode": "source",
                 "source": false
               }
@@ -72,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#human-centered-design",
+                "query": "tag:#value",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -109,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Sync Obsidian Vault on ios with iSH.md",
+                "file": "Books Reading Notes/<Python for Data Analysis>/CH-10 Data Aggregation and Group Operations.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -126,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Sync Obsidian Vault on ios with iSH.md",
+                "file": "Books Reading Notes/<Python for Data Analysis>/CH-10 Data Aggregation and Group Operations.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Sync Obsidian Vault on ios with iSH.md"
+                "file": "Books Reading Notes/<Python for Data Analysis>/CH-10 Data Aggregation and Group Operations.md"
               }
             }
           }
@@ -169,17 +145,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "b849ff8b0066d1a8",
+  "active": "961f436f9cfe8936",
   "lastOpenFiles": [
+    "Bandwagon Effect.md",
     "Articles Reading Notes/Conscious Design Systems.md",
+    "Books Reading Notes/<Python for Data Analysis>/CH-10 Data Aggregation and Group Operations.md",
+    "Sync Obsidian Vault on ios with iSH.md",
     "Books To Read/<Design for Real Life>.md",
     "Books Reading Notes/<Python for Data Analysis>/CH-8 Data Wragling Join, Combine and Reshape.md",
-    "Bandwagon Effect.md",
-    "Books Reading Notes/<Python for Data Analysis>/CH-10 Data Aggregation and Group Operations.md",
     "Machine Learning/Iterative Imputation.md",
     "Machine Learning/K-Means VS KNN.md",
     "Machine Learning/Untitled.canvas",
-    "Books Reading Notes/<Python for Data Analysis>/CH-9 Plotting and Visualization.md",
-    "Sync Obsidian Vault on ios with iSH.md"
+    "Books Reading Notes/<Python for Data Analysis>/CH-9 Plotting and Visualization.md"
   ]
 }
