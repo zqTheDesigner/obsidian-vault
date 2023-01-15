@@ -1,0 +1,17 @@
+{
+	"nodes":[
+		{"id":"df37df4d746c8a3f","x":-142,"y":-612,"width":236,"height":60,"type":"text","text":"Data import and overview"},
+		{"id":"0b51bfffaf7fc165","x":-213,"y":-443,"width":379,"height":257,"type":"file","file":"Feature Correlations.md"},
+		{"id":"215e2cfaa1d0bf36","x":245,"y":-443,"width":250,"height":60,"type":"text","text":"Visualise Distribution"},
+		{"id":"a713996ffa5ab8ff","x":245,"y":-344,"width":250,"height":60,"type":"text","text":"Visualise Correlations"},
+		{"id":"0ecf2f821d2e4c88","x":-148,"y":-65,"width":250,"height":60,"type":"text","text":"Understand what data to choose for building model"},
+		{"id":"2c685d1dcb904068","x":-168,"y":80,"width":288,"height":240,"type":"text","text":"Data Preparation\n- Drop unnecessary data (for both training and testing)\n- Fill up missing data\n- Translate non-numerical features to numerical features"}
+	],
+	"edges":[
+		{"id":"32f92c07dc4564f5","fromNode":"df37df4d746c8a3f","fromSide":"bottom","toNode":"0b51bfffaf7fc165","toSide":"top"},
+		{"id":"f016e3fb7879d147","fromNode":"0b51bfffaf7fc165","fromSide":"right","toNode":"215e2cfaa1d0bf36","toSide":"left"},
+		{"id":"1ead3091668c1baa","fromNode":"0b51bfffaf7fc165","fromSide":"right","toNode":"a713996ffa5ab8ff","toSide":"left"},
+		{"id":"01dd5645d3a7bff1","fromNode":"0b51bfffaf7fc165","fromSide":"bottom","toNode":"0ecf2f821d2e4c88","toSide":"top"},
+		{"id":"8b84229063dd65f6","fromNode":"0ecf2f821d2e4c88","fromSide":"bottom","toNode":"2c685d1dcb904068","toSide":"top"}
+	]
+}
