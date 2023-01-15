@@ -57,9 +57,53 @@ source: https://www.vldb.org/conf/2001/P421.pdf
 In the above paper, 100k and 50 dimensional clustered dataset been tested. 
 So assume any data that is smaller than 100k and 50 dimensional are suitable for KNN?
 
-# Further Reading & Practices
+# The Code
+## Training
+```python
 
+from sklearn import metrics
+from sklearn.neighbors import KNeighborsClassifier
 
+k_range = range(1,26)
+scores = []
 
+for k in k_range:
+	# Initialize KNN classifier
+	knn = KNeighborsClassifier(n_neighbors=k)
+	
+	# Fit the training data to knn, (features, labels)
+	knn.fit(X_train, Y_train)
 
+	# Get the Y prediction by inputting test features
+	Y_pred = knn.predict(X_test)
+
+	# Calculate the accuracy score by (source of truth, prediction)
+	scores.append(metrics.accuracy_score(Y_test, Y_pred))
+
+import matplotlib.pyplot as plt
+
+plt.plot(k_range, scores)
+plt.xlabel('Value of K for KNN')
+plt.ylabel("Testing Accuracy")
+
+scores_df = pd.DataFrame(scores, index=range(1,26))
+
+# Show the prediction accuracy and K value
+scores_df.sort_values(by=0, ascending=False)
+```
+
+## Predicting
+
+```python
+# Not sure if this step is necessary
+test = df_test_set.iloc[:, :].values
+
+knn = KNeighborsClassifier(n_neighbors=3)
+knn.fit(X, Y)
+
+Y_pred = knn.predict(test)
+
+prediction_df =  pd.DataFrame(Y_pred, columns=['Survived'] )
+prediction_df.index = df_test['PassengerId']
+```
 

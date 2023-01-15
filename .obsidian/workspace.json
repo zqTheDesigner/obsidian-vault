@@ -47,15 +47,11 @@
             "id": "cd74e0700d5356ce",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "Machine Learning/KNN-process.canvas",
-                "viewState": {
-                  "x": 40.86683013355591,
-                  "y": -106.1577107679466,
-                  "zoom": -0.3786968810441468,
-                  "snapToGrid": true
-                }
+                "file": "Machine Learning/KNN.md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -144,9 +140,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Machine Learning/KNN-process.canvas"
-              }
+              "state": {}
             }
           },
           {
@@ -155,7 +149,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Machine Learning/KNN-process.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -172,7 +165,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Machine Learning/KNN-process.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -195,15 +187,15 @@
   },
   "active": "cd74e0700d5356ce",
   "lastOpenFiles": [
+    "Machine Learning/KNN-process.canvas",
+    "Machine Learning/KNN.md",
+    "Data Splitting.md",
     "Install and set up Git.md",
     "Supervised Learning.md",
     "Feature Correlations.md",
-    "Machine Learning/KNN-process.canvas",
     "Articles Reading Notes/Titanic Machine Learning by k-nearest neighbors (KNN) algorithm.md",
     "Articles Reading Notes/Conscious Design Systems.md",
-    "Machine Learning/KNN.md",
     "Machine Learning/K-Means VS KNN.md",
-    "Parametric & Non-parametric Algorithms.md",
-    "Parametric.md"
+    "Parametric & Non-parametric Algorithms.md"
   ]
 }
