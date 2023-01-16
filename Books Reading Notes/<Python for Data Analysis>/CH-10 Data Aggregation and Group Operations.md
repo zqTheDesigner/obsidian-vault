@@ -218,11 +218,161 @@ Optimized groupby methods
 | size | Compute group sizes, returning result as a Series | 
 | std, var | Sample standard deviation and variance | 
  
-Tp use your own aggregation functions, pass any function that aggregates an array to the aggregate methid or its short alias agg:
+To use your own aggregation functions, pass any function that aggregates an array to the aggregate method to its short alias `agg`:
 
 ```python
 def peak_to_peak(arr):
 	return arr.max() - arr.min()
 
 grouped.agg(peak_to_peak)
+```
+
+
+## Column-wise and multiple function application 
+
+```python
+tips = pd.read_csv('./datasets/tips.csv')
+tips.head()
+
+tips['tip_pct'] = tips['tip'] / tips['total_bill']
+tips.head()
+
+grouped = tips.groupby(['day', 'smoker'])
+grouped_pct = grouped['tip_pct']
+
+grouped_pct.agg('mean')
+
+# Pass a list of functions or function names to get a DataFrame with column names taken from the functions
+grouped_pct.agg(['mean', 'std', peak_to_peak])
+
+# Pass a list of (name, function) tuples, the first element of each tuple will be used as DataFrame column name
+grouped_pct.agg([('Average', 'mean'), ('stdev', np.std)])
+```
+
+Specify a list of functions to apply to all of the columns or different functions per column in DataFrame
+
+```python
+functions = ['count', 'mean', 'max']
+
+result = grouped[['tip_pct', 'total_bill']].agg(functions)
+
+result
+```
+
+Apply different functions to one or more of the column, pass a dictionary to agg that contains a mapping of column names to any of the function specifications
+
+```python
+grouped.agg({"tip": np.max, "size": "sum"})
+
+# Pass multiple function to one column by using a list
+grouped.agg({"tip_pct": ["min", "max", "mean"]})
+```
+
+## Return aggregated data without row indexes
+
+By default, the grouped key will be use as the index. 
+
+```python
+tips.groupby(['day', 'smoker'], as_index=False).mean()
+```
+
+# 10.3 Apply: General split-apply-combine
+#pandas/groupby/apply
+
+The most general purpose GroupBy method is apply. 
+`apply` splits the object being manipulated into pieces, invokes the passed function on each piece and then attempts to concatenate the pieces. 
+
+```python
+# A function that selects the rows with the largest values in a particular column
+def top(df, n=5, column="tip_pct"):
+	return df.sort_values(column, ascending=False)[:n]
+
+top(tips, n=6)
+
+# The top function will be applied to each smoker group
+# The result has a hierarchical index with an inner level that contains index values from the original DataFrame
+tips.groupby('smoker').apply(top)
+
+# Pass a function to apply with other arguments
+# Below code will return the highest total bill in each day for smoker and non smokers
+tips.groupby(['smoker', 'day']).apply(top, n=1, column='total_bill')
+```
+
+```python
+result = tips.groupby('smoker')['tip_pct'].describe()
+result
+result.unstack('smoker')
+# Inside groupby when invoke a method like describe, it is a sort cut for
+def f(group):
+	return group.describe()
+
+grouped.apply(f)
+```
+
+## Suppress the group keys
+
+```python
+tips.groupby('smoker', group_keys=False).apply(top)
+```
+
+## Quantile and Bucket Analysis
+`pandas.cut` and `pandas.qcut`, slicing data up into buckets with binds of your choosing. 
+
+```python
+# Sample random dataset and an equal-length bucket categorization using pandas.cut
+frame = pd.DataFrame(
+    {"data1": np.random.standard_normal(1000), "data2": np.random.standard_normal(1000)}
+)
+
+frame.head()
+
+quartiles = pd.cut(frame['data1'], 4)
+
+# The Categorical object returned by cut can be passed directly to groupby. 
+# So we could compute a set of group statistics fro the quartiles.
+
+def get_stats(group):
+    return pd.DataFrame(
+        {
+            "min": group.min(),
+            "max": group.max(),
+            "count": group.count(),
+            "mean": group.mean(),
+        }
+    )
+
+grouped = frame.groupby(quartiles)
+
+grouped.apply(get_stats)
+
+```
+
+## Example: Filling Missing Values with Group-Specific Values
+Suppose you need to fill value to vary by group.
+Use apply with function that calls fillna on each data chunk
+
+```python
+states = ['Ohio', 'New York', 'Vermont', 'Florida', 'Oregon', 'Nevada', 'California', 'Idaho']
+
+group_key = ['East', 'East', 'East', 'East', 'West', 'West', 'West', 'West']
+
+data = pd.Series(np.random.standard_normal(8), index=states)
+
+# Set some value in the data to be missing
+data[['Vermont', 'Nevada', "Idaho"]] = np.nan
+
+data.groupby(group_key).size() # Count the total data
+data.groupby(group_key).count() # Count the valid data
+
+def fill_mean(group):
+	return group.fillna(group.mean())
+
+# Fill up the missing value by each group's mean
+data.groupby(group_key).apply(fill_mean)
+```
+```python
+fill_values = {'East':0.5, 'West': -1}
+
+def fill_func(group):
+	return group.fillna(fill_values[group.name])
 ```
