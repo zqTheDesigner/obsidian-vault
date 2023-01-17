@@ -370,9 +370,105 @@ def fill_mean(group):
 # Fill up the missing value by each group's mean
 data.groupby(group_key).apply(fill_mean)
 ```
+
 ```python
 fill_values = {'East':0.5, 'West': -1}
 
 def fill_func(group):
 	return group.fillna(fill_values[group.name])
+
+# groupby.apply() returns a dataframe
+data.groupby(group_key).apply(fill_func)
+
+```
+
+## Example : Random Sampling and Permutation
+
+To draw a random sample from a large dataset for Monte Carlo simulation. 
+
+#code-snippet/cards
+```python
+# Create a set of cards
+suits = ["H", "S", "C", "D"]
+
+card_val = (list(range(1, 11)) + [10] * 3) * 4
+base_names = ["A"] + list(range(2, 11)) + ["J", "K", "Q"]
+
+cards = []
+
+for suit in suits:
+	cards.extend(str(num) + suit for num in base_names)
+
+deck = pd.Series(card_val, index=cards)
+
+# Get 5 random cards
+def draw(deck, n = 5):
+	return deck.sample(5)
+
+draw(deck)
+
+# Get 2 random cards from each suit. 
+
+def get_suit(card):
+	# last letter is suit
+	return card[-1]
+
+deck.groupby(get_suit).apply(draw, n=2)
+```
+
+## Example: Group Weighted Average and Correlation
+#weighted-average
+
+```python
+df = pd.DataFrame(
+    {
+        "category": ["a", "a", "a", "a", "b", "b", "b", "b"],
+        "data": np.random.standard_normal(8),
+        "weights": np.random.uniform(size=8),
+    }
+)
+df
+
+grouped = df.groupby("category")
+
+# Weighted average by category
+def get_wavg(group):
+    return np.average(group["data"], weights=group["weights"])
+
+
+grouped.apply(get_wavg)
+```
+
+Compute the correlations between groups and columns
+#pandas/correlations
+
+```python
+close_px = pd.read_csv("./datasets/stock_px.csv", parse_dates=True, index_col=0)
+
+close_px.info()
+
+close_px.tail(4)
+
+# Create a function that computes the pair-wise correlation or each column with SPX column
+
+def spx_corr(group):
+	return group.corrwith(group['SPX'])
+
+# Compute percent change on the close_px using pct_change
+rets = close_px.pct_change().dropna()
+
+# Group these percent changes by year
+def get_year(x):
+	return x.year
+
+by_year = rets.groupby(get_year)
+
+by_year.apply(spx_corr)
+
+# Compute intercolumn correlations
+
+def corr_appl_msft(group):
+	return group['AAPL'].corr(group["MSFT"])
+
+by_year.apply(corr_appl_msft)
 ```
