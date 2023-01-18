@@ -1,7 +1,7 @@
 {
 	"nodes":[
 		{"id":"df37df4d746c8a3f","x":-142,"y":-612,"width":236,"height":60,"type":"text","text":"Data import and overview"},
-		{"id":"0b51bfffaf7fc165","x":-213,"y":-443,"width":379,"height":257,"type":"file","file":"Feature Correlations.md"},
+		{"id":"0b51bfffaf7fc165","x":-213,"y":-443,"width":379,"height":257,"type":"file","file":"Machine Learning/ML Concepts/Feature Correlations.md"},
 		{"id":"215e2cfaa1d0bf36","x":245,"y":-443,"width":250,"height":60,"type":"text","text":"Visualise Distribution"},
 		{"id":"a713996ffa5ab8ff","x":245,"y":-344,"width":250,"height":60,"type":"text","text":"Visualise Correlations"},
 		{"id":"0ecf2f821d2e4c88","x":-148,"y":-65,"width":250,"height":60,"type":"text","text":"Understand what data to choose for building model"},

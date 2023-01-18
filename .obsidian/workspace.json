@@ -8,63 +8,103 @@
         "type": "tabs",
         "children": [
           {
-            "id": "961f436f9cfe8936",
+            "id": "129e543d876bd4d5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Machine Learning/K-Means VS KNN.md",
+                "file": "Machine Learning/Models/K-Means Clustering.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "66aef9b8d7449446",
+            "id": "52917523fac0db63",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Books Reading Notes/<Python for Data Analysis>/CH-10 Data Aggregation and Group Operations.md",
+                "file": "Machine Learning/Models/K-Means Clustering.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "633d7ea713540055",
+            "id": "aa1ff82c923a2266",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md",
+                "file": "Machine Learning/ML Concepts/Clustering.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "b811f2a6eb94922b",
+            "id": "90730c782cc24ec8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Machine Learning/KNN.md",
+                "file": "Machine Learning/Models/K-Means Clustering.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "cd74e0700d5356ce",
+            "id": "ff7aa68b86e86d82",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Machine Learning/ML Concepts/Clustering.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "88e0be57223b57e0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Machine Learning/ML Concepts/Clustering.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "530250042d4e749c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Machine Learning/Models/K-Means Clustering.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f22fcd7408697b29",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Machine Learning/ML Concepts/Clustering.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -93,7 +133,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#k-means",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -123,7 +163,7 @@
       {
         "id": "c3b12b91f2fd2434",
         "type": "tabs",
-        "dimension": 53.455882352941174,
+        "dimension": 73.75,
         "children": [
           {
             "id": "e8b95d4b54a7cf11",
@@ -141,7 +181,7 @@
       {
         "id": "8ef8937cdce2e8fb",
         "type": "tabs",
-        "dimension": 46.544117647058826,
+        "dimension": 26.25,
         "children": [
           {
             "id": "a5d67fff56ddbcd9",
@@ -149,7 +189,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md"
+                "file": "Machine Learning/Models/K-Means Clustering.md"
               }
             }
           },
@@ -159,7 +199,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md",
+                "file": "Machine Learning/Models/K-Means Clustering.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -176,7 +216,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md",
+                "file": "Machine Learning/Models/K-Means Clustering.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -197,17 +237,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9d1ad4a2c01798dc",
+  "active": "530250042d4e749c",
   "lastOpenFiles": [
+    "Machine Learning/Models/K-Means VS KNN.md",
+    "Templates/Article Reading Notes.md",
+    "Machine Learning/Models/K-Means Clustering.md",
+    "Machine Learning/ML Operation Processes/KNN-process.canvas",
+    "Machine Learning/ML Concepts/Clustering.md",
+    "Machine Learning/ML Concepts/Feature Correlations.md",
+    "Data Splitting.md",
     "Books Reading Notes/<Python for Data Analysis>/CH-10 Data Aggregation and Group Operations.md",
     "Articles Reading Notes/Conscious Design Systems.md",
-    "Machine Learning/K-Means VS KNN.md",
-    "Test 1.canvas",
-    "Second flow.canvas",
-    "Sync Obsidian Vault on ios with iSH.md",
-    "Machine Learning/KNN.md",
-    "Machine Learning/KNN-process.canvas",
-    "Data Splitting.md",
-    "Install and set up Git.md"
+    "Test 1.canvas"
   ]
 }
