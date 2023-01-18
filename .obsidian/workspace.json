@@ -32,6 +32,18 @@
             }
           },
           {
+            "id": "633d7ea713540055",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
             "id": "b811f2a6eb94922b",
             "type": "leaf",
             "state": {
@@ -52,7 +64,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -137,7 +149,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Books Reading Notes/<Python for Data Analysis>/CH-10 Data Aggregation and Group Operations.md"
+                "file": "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md"
               }
             }
           },
@@ -147,7 +159,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Books Reading Notes/<Python for Data Analysis>/CH-10 Data Aggregation and Group Operations.md",
+                "file": "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -164,7 +176,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Books Reading Notes/<Python for Data Analysis>/CH-10 Data Aggregation and Group Operations.md",
+                "file": "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -174,7 +186,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 333.5
+    "width": 239.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -185,11 +197,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "66aef9b8d7449446",
+  "active": "9d1ad4a2c01798dc",
   "lastOpenFiles": [
+    "Books Reading Notes/<Python for Data Analysis>/CH-10 Data Aggregation and Group Operations.md",
     "Articles Reading Notes/Conscious Design Systems.md",
     "Machine Learning/K-Means VS KNN.md",
-    "Books Reading Notes/<Python for Data Analysis>/CH-10 Data Aggregation and Group Operations.md",
     "Test 1.canvas",
     "Second flow.canvas",
     "Sync Obsidian Vault on ios with iSH.md",

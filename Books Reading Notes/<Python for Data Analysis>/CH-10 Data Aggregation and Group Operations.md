@@ -472,3 +472,130 @@ def corr_appl_msft(group):
 
 by_year.apply(corr_appl_msft)
 ```
+
+## Example: Group-Wise [[Linear Regression]]
+#linear-regression
+Groupby can perform more complex group-wise statistical analysis, as long as the function returns a pandas object or scalar value. 
+
+```python
+import statsmodels.api as sm
+
+def regress(data, yvar=None, xvars=None):
+	Y = data[yvar]
+	X = data[xvars]
+	X['intercept'] = 1
+	result = sm.OLS(Y, X).fit()
+	return result.params
+
+by_year.apply(regress, yvar='AAPL', xvars=['SPX'])
+```
+
+# 10.4 Group Transforms and "Unwrapped" GroupBys
+
+`transform` build in method. 
+- Product a scalar value to be broadcast to the shape of the group
+- Product an object of the same shape as the input group
+- Must not mutate its input
+
+The difference between `apply` and `transform`: 
+apply will apply the function to each group. And assign it to the group label (index will be group label)
+transform will apply the function to each group, and assigned the calculated value back (keeps the original index)
+
+```python
+df = pd.DataFrame({'key':['a', 'b', 'c'] * 4, 'value':np.arange(12.)})
+g = df.groupby('key')
+g.mean()
+
+# Product a series of the same shape as df['value] but with values replaced by the average grouped by 'key'
+
+def get_mean(group):
+	return group.mean()
+
+g.transform(get_mean)
+
+g.apply(get_mean)
+
+def times_two(group):
+	return group * 2
+
+g.transform(times_two)
+
+# Compute the ranks in descending order for each group 
+def get_ranks(group):
+	return group.rank(ascending=False)
+
+g.transform(get_ranks)
+
+g.rank(ascending=False)
+```
+
+Unwrapped 
+```python
+# a group transformation function composed from simple aggregations
+def normalize(x):
+	return (x - x.mean()) / x.std()
+
+g.transform(normalize)
+
+# Use built-in aggregate functions
+g.transform('mean')
+
+# unwrapped group operation
+# Doing arithmetic between the outputs of multiple GroupBy operations
+# Instead of writing a function and passing it to groupby(...).apply
+normalized = (df['value'] - g.transform('mean')) / g.transform('std')
+```
+# 10.5 Pivot Tables and Cross-tabulation
+#pivot-table
+A pivot table is a data summarization tool frequently found in spreadsheet programs and other data analysis software. 
+
+It aggregates a table of data by one or more keys, arranging the data in a rectangle with some of the group keys.
+
+```python
+tips = pd.read_csv("./datasets/tips.csv")
+
+tips["tip_pct"] =  tips["tip"] / tips['total_bill']
+
+tips.pivot_table(index=["day", "smoker"])
+# Same as
+tips.groupby(["day", "smoker"]).mean()
+
+# Take the average of only tip_pct and size  and additionally group by time. 
+# Put smoker in the table columns and time and day in the rows
+tips.pivot_table(index=["time", "day"], columns="smoker", values=["tip_pct", "size"])
+
+# adding a All row and column labels 
+# means without taking in to account smoker versus nonsmoker 
+tips.pivot_table(index=["time", "day"], columns="smoker", values=["tip_pct", "size"], margins=True)
+
+# To use an aggregation function other than mean, pass it to aggfunc keyword argument
+tips.pivot_table(index=['time', 'smoker'], columns="day", values="tip_pct", aggfunc=len, margins=True)
+
+# use fill_value=0 argument to full up NA values
+```
+
+## Cross-Tabulations: Crosstab
+#pandas/crosstab
+
+a corss-tabulation is a special case of a pivot table that computes group frequencies. 
+
+```python
+from io import StringIO
+
+data = """Sample Nationality Handedness
+1 USA Right-handed
+2 Japan Left-handed
+3 USA Right-handed
+4 Japan Right-handed
+5 Japan Left-handed
+6 Japan Right-handed
+7 USA Right-handed
+"""
+
+data = pd.read_table(StringIO(data), sep="\s+")
+
+# The first two arguments to crosstab can each be an array of Series of a list of arrays
+pd.crosstab(data['Nationality'], data['Handedness'], margins=True)
+
+pd.crosstab([tips['time'], tips['day']], tips['smoker'], margins=True)
+```
