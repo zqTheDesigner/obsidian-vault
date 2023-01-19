@@ -85,7 +85,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Machine Learning/Models/K-Means Clustering.md",
+                "file": "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md",
                 "mode": "source",
                 "source": false
               }
@@ -189,7 +189,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Machine Learning/Models/K-Means Clustering.md"
+                "file": "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md"
               }
             }
           },
@@ -199,7 +199,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Machine Learning/Models/K-Means Clustering.md",
+                "file": "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -216,7 +216,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Machine Learning/Models/K-Means Clustering.md",
+                "file": "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -239,9 +239,9 @@
   },
   "active": "530250042d4e749c",
   "lastOpenFiles": [
+    "Machine Learning/Models/K-Means Clustering.md",
     "Machine Learning/Models/K-Means VS KNN.md",
     "Templates/Article Reading Notes.md",
-    "Machine Learning/Models/K-Means Clustering.md",
     "Machine Learning/ML Operation Processes/KNN-process.canvas",
     "Machine Learning/ML Concepts/Clustering.md",
     "Machine Learning/ML Concepts/Feature Correlations.md",
