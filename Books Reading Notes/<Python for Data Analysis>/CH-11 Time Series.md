@@ -101,3 +101,76 @@ stamp
 A pandas.Timestamp can be substituted most places where your would use a datetime object. But reverse it not true.
 pandas.Timestamp can store nano seconds and frequency information, where datetime object cannot. 
 
+## Indexing, Selection, Subsetting
+#pandas/time-series/indexing
+
+Time series behaves like any other Series when you are indexing and selecting data based on the label.
+
+```python
+# Select by index
+stamp = ts.index[2]
+
+ts[stamp]
+
+# Select by string that is interpretable as a date
+# Both of these 3 works
+ts["2011/01/10"]
+ts["20110110"]
+ts["2011-01-10"]
+
+# Pace a year or a month to select slices of data 
+longer_ts = pd.Series(np.random.standard_normal(1000), index=pd.date_range('2011-01-01', periods=1000))
+
+longer_ts['2012']
+
+# Select the month
+longer_ts['2012-02']
+
+# Select by datetime object
+ts[datetime(2011,1,7)]
+
+# If time stamps not contained in a time series, the range still can be selected
+ts['2011-01-06':'2011-01-11']
+
+# use truncate slice a series between two dates
+ts.truncate(after="2011-01-09")
+
+
+times = ts.truncate(after="2011-01-09")
+times[:] = np.nan
+```
+
+Indexing with DataFrame
+```python
+#  Indexing is same for DataFrame
+
+dates = pd.date_range("2000-01-01", periods=100, freq="W-WED")
+
+long_df = pd.DataFrame(
+    np.random.standard_normal((100, 4)),
+    index=dates,
+    columns=["Coloradi", "Texas", "New York", "Ohio"],
+)
+
+long_df.loc['2001-05']
+```
+
+## Time Series with Duplicated Indices
+
+When there are multiple observations failing on a particular timestamp. 
+
+```python
+dates = pd.DatetimeIndex(['2000-01-01','2000-01-02','2000-01-02', '2000-01-02', '2000-01-03'])
+
+dup_ts = pd.Series(np.arange(5), index=dates)
+
+# Check if there are duplicated index
+dup_ts.index.is_unique
+
+# To aggregate the data having nonunique timestamps
+
+grouped = dup_ts.groupby(level=0)
+
+# To get the dataframe without duplications
+grouped.mean()
+```
