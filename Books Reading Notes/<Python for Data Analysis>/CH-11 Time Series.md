@@ -174,3 +174,81 @@ grouped = dup_ts.groupby(level=0)
 # To get the dataframe without duplications
 grouped.mean()
 ```
+
+# 11.3 Date Ranges, Frequencies and Shifting
+#pandas/time-series/resample
+Generic time series in pandas are assumed to be irregular - no fixed frequencies.
+
+Convert the sample time series to fixed daily frequency buy calling resample.
+
+```python
+resampler = ts.resample('D')
+
+# use resampler.mean() to convert the resampler object to DataFrame
+resampler.mean()
+
+```
+
+## Generating Date Ranges
+`pandas.date_range` is responsible for generating a DatetimeIndex with an indicated length according to a particular frequency. 
+
+```python
+# By default, pandas.date_range generates daily timestamps.
+index = pd.date_range("2012-04-01", "2012-06-01")
+
+# Pass only a start or end date, must pass a number of periods to generate
+# generate 20 days timestamps starts from 2012-04-01
+pd.date_range(start="2012-04-01", periods=20)
+
+# frequency "BM" stands to BusinessMonthEnd
+pd.date_range("2000-01-01", "2000-12-01", freq="BM")
+
+# date_range preserves the time of start and end timestamp
+pd.date_range("2012-05-02 12:56:31", periods=5)
+
+# Normalize the timestamp by passing the normalize option
+pd.date_range("2012-05-02 12:56:31", periods=5, normalize=True)
+```
+
+Anchored offsets - Frequencies describe points in time that are not evenly spaces, "M" and "BM" depend on the number of days in a month. "BM" depends on whether the month ends on a weekend or not.
+
+## Week of month dates
+
+Frequency class starting with WOM enables you to get dates like the third Friday of each month
+
+```python
+# get every 3rd Friday of each week from start to end
+monthly_dates = pd.date_range("2012-01-01", "2012-09-01", freq="WOM-3FRI")
+
+monthly_dates
+```
+
+## Shifting (Leading and Lagging) Data
+#pandas/time-series/shifting
+Shifting refers to moving data backward and forward through time. 
+
+Both Series and DataFrame have a shift method for doing naive shifts forward or backward, leaving the index unmodified. 
+
+```python
+ts = pd.Series(
+    np.random.standard_normal(4), index=pd.date_range("2000-01-01", periods=4, freq="M")
+)
+
+ts.shift(2)
+ts.shift(-2)
+
+# use shift to computing consecutive percent changes in a time series or multiple time series as DataFrame columns
+ts / ts.shift(1) - 1
+
+# Naive shifts leave the index unmodified
+# If frequency is known, the shift is moving the timestamps instead of the data
+ts.shift(2, freq="M")
+
+ts.shift(3, freq="D")
+
+# T stands for minutes. 
+# the freq parameter indicates the offset to apply to the timestamps, it does not change the underlaying frequency of the data
+ts.shift(1, freq="90T")
+
+```
+

@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Machine Learning/Models/K-Means Clustering.md",
+                "file": "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md",
+                "file": "Machine Learning/ML Concepts/Feature Correlations.md",
                 "mode": "source",
                 "source": false
               }
@@ -103,8 +103,7 @@
               }
             }
           }
-        ],
-        "currentTab": 6
+        ]
       }
     ],
     "direction": "vertical"
@@ -237,17 +236,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "530250042d4e749c",
+  "active": "129e543d876bd4d5",
   "lastOpenFiles": [
     "Machine Learning/Models/K-Means Clustering.md",
+    "Machine Learning/ML Operation Processes/KNN-process.canvas",
+    "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md",
     "Machine Learning/Models/K-Means VS KNN.md",
     "Templates/Article Reading Notes.md",
-    "Machine Learning/ML Operation Processes/KNN-process.canvas",
     "Machine Learning/ML Concepts/Clustering.md",
     "Machine Learning/ML Concepts/Feature Correlations.md",
     "Data Splitting.md",
     "Books Reading Notes/<Python for Data Analysis>/CH-10 Data Aggregation and Group Operations.md",
-    "Articles Reading Notes/Conscious Design Systems.md",
-    "Test 1.canvas"
+    "Articles Reading Notes/Conscious Design Systems.md"
   ]
 }
