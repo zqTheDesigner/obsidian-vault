@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md",
+                "file": "Machine Learning/Models/K-Means VS KNN.md",
                 "mode": "source",
                 "source": false
               }
@@ -188,7 +188,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md"
+                "file": "Machine Learning/Models/K-Means VS KNN.md"
               }
             }
           },
@@ -198,7 +198,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md",
+                "file": "Machine Learning/Models/K-Means VS KNN.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -215,7 +215,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md",
+                "file": "Machine Learning/Models/K-Means VS KNN.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -238,15 +238,15 @@
   },
   "active": "129e543d876bd4d5",
   "lastOpenFiles": [
+    "Machine Learning/Models/KNN.md",
+    "Machine Learning/Models/K-Means VS KNN.md",
+    "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md",
     "Machine Learning/Models/K-Means Clustering.md",
     "Machine Learning/ML Operation Processes/KNN-process.canvas",
-    "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md",
-    "Machine Learning/Models/K-Means VS KNN.md",
     "Templates/Article Reading Notes.md",
     "Machine Learning/ML Concepts/Clustering.md",
     "Machine Learning/ML Concepts/Feature Correlations.md",
     "Data Splitting.md",
-    "Books Reading Notes/<Python for Data Analysis>/CH-10 Data Aggregation and Group Operations.md",
-    "Articles Reading Notes/Conscious Design Systems.md"
+    "Books Reading Notes/<Python for Data Analysis>/CH-10 Data Aggregation and Group Operations.md"
   ]
 }
