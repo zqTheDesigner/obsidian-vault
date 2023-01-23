@@ -13,7 +13,43 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Machine Learning/Models/K-Means VS KNN.md",
+                "file": "Machine Learning/Iterative Imputation.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f9948427966c43a3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Machine Learning/Iterative Imputation.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "3f3d8361d4a5c4a0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Machine Learning/Iterative Imputation.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "6acd45c8b1b3de71",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md",
                 "mode": "source",
                 "source": false
               }
@@ -103,7 +139,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -132,7 +169,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#k-means",
+                "query": "tag:#pandas/time-series/time-zone",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -188,7 +225,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Machine Learning/Models/K-Means VS KNN.md"
+                "file": "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md"
               }
             }
           },
@@ -198,7 +235,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Machine Learning/Models/K-Means VS KNN.md",
+                "file": "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -215,7 +252,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Machine Learning/Models/K-Means VS KNN.md",
+                "file": "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -236,17 +273,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "129e543d876bd4d5",
+  "active": "6acd45c8b1b3de71",
   "lastOpenFiles": [
-    "Machine Learning/Models/KNN.md",
     "Machine Learning/Models/K-Means VS KNN.md",
+    "Books To Read/<Design for Real Life>.md",
     "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md",
-    "Machine Learning/Models/K-Means Clustering.md",
-    "Machine Learning/ML Operation Processes/KNN-process.canvas",
-    "Templates/Article Reading Notes.md",
-    "Machine Learning/ML Concepts/Clustering.md",
-    "Machine Learning/ML Concepts/Feature Correlations.md",
-    "Data Splitting.md",
-    "Books Reading Notes/<Python for Data Analysis>/CH-10 Data Aggregation and Group Operations.md"
+    "Books Reading Notes/<Python for Data Analysis>/CH-9 Plotting and Visualization.md",
+    "Books Reading Notes/<Python for Data Analysis>/CH-10 Data Aggregation and Group Operations.md",
+    "Machine Learning/Iterative Imputation.md",
+    "Machine Learning/Regression Algorithms.md",
+    "Machine Learning/Models/KNN.md",
+    "Machine Learning/Missing Data Imputation.md",
+    "Machine Learning/Models/K-Means Clustering.md"
   ]
 }
