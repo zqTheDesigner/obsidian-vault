@@ -415,3 +415,107 @@ new_periods = (periods.asfreq('B', 'end') - 1).asfreq('H', 'start') + 1
 
 ```
 
+## Converting Timestamps to Periods (and Back)
+
+Series and DataFrame objects indexed by timestamps can be converted to periods with the to_period method.
+
+```python
+dates = pd.date_range("2000-01-01", periods=3, freq="M")
+
+ts = pd.Series(np.random.standard_normal(3), index=dates)
+
+pts = ts.to_period()
+```
+
+Periods refer to nonoverlapping time spaces, a timestamp can only belong to a single period for a given frequency. 
+
+```python
+dates = pd.date_range('2000-01-29', periods=6)
+
+ts2 = pd.Series(np.random.standard_normal(6), index=dates)
+
+ts2.to_period('M')
+
+# To convert back to timestamps, use the to_timestamp method
+pts = ts2.to_period()
+
+pts
+
+# convert to the end timestamp of the day. 
+pts.to_timestamp(how='end')
+```
+
+## Creating a PeriodIndex from Arrays
+
+When fixed frequency datasets stored with timespan information spread across multiple columns. 
+
+```python
+data = pd.read_csv("./datasets/macrodata.csv")
+
+data.head()
+
+# passing different frequency arrays to PeriodIndex with a frequency
+index = pd.PeriodIndex(year=data['year'], quarter=data['quarter'], freq="Q-DEC")
+
+data.index = index
+
+data['infl']
+```
+
+# 11.6 Resampling and Frequency Conversion
+#pandas/time-series/resample #upsample #downsample
+
+Resampling refers to the process of converting a time series from one frequency to another. Aggregating higher frequency data to lower frequency is called **downsampling**, converting lower frequency to higher frequency is called **upsampling**. 
+
+Special cases, convert W-WED (weekly on Wednesdays) to W-FRI (weekly on Fridays) is neither both.
+
+Use pandas objects' `resample` method for all frequency conversion. 
+Resample has a similar API to `groupby`, call resample to group the data then call an aggregation function.
+
+```python
+dates = pd.date_range("2000-01-01", periods=100)
+
+ts = pd.Series(np.random.standard_normal(len(dates)), index=dates)
+
+# Resample the data to monthly frequency, then calculate the mean value
+ts.resample('M').mean()
+
+ts.resample('M', kind='period').mean()
+```
+
+### Open-high-low-close(OHLC) resampling
+#pandas/time-series/ohlc
+To compute four values for each bucket - first (open), last(cose), maximum(high), minimal(low) values
+
+Use `ohlc()` method to get the 4 aggregrates
+
+```python
+ts = pd.Series(np.random.permutation(np.arange(len(dates))), index=dates)
+
+ts.resample('5min').ohlc()
+```
+
+## Upsampling and Interpolation
+
+Upsampling is converting from a lower frequency to higher frequency, where no aggregation is needed.
+
+```python
+frame = pd.DataFrame(
+    np.random.standard_normal((2, 4)),
+    index=pd.date_range("2000-01-01", periods=2, freq="W-Wed"),
+    columns=["Colorado", "Texas", "New York", "Ohio"],
+)
+
+frame
+
+# When use an aggregation function, there is only one value per group
+# missing values result in the gaps
+df_daily = frame.resample('D').asfreq()
+df_daily
+
+# Fill forward each weekly value on the non-Wednesdays
+# with limit of how far to continue using an observed value
+df_daily = frame.resample('D').ffill(limit=2)
+df_daily
+```
+
