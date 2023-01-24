@@ -4,47 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "6880687c3c9da5c9",
+        "id": "6ad3373c034cf810",
         "type": "tabs",
         "children": [
           {
-            "id": "129e543d876bd4d5",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Machine Learning/Iterative Imputation.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f9948427966c43a3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Machine Learning/Iterative Imputation.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "3f3d8361d4a5c4a0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Machine Learning/Iterative Imputation.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "6acd45c8b1b3de71",
+            "id": "14984741c2f97659",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -54,93 +18,8 @@
                 "source": false
               }
             }
-          },
-          {
-            "id": "52917523fac0db63",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Machine Learning/Models/K-Means Clustering.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "aa1ff82c923a2266",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Machine Learning/ML Concepts/Clustering.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "90730c782cc24ec8",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Machine Learning/Models/K-Means Clustering.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "ff7aa68b86e86d82",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Machine Learning/ML Concepts/Clustering.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "88e0be57223b57e0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Machine Learning/ML Concepts/Clustering.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "530250042d4e749c",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Machine Learning/ML Concepts/Feature Correlations.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "f22fcd7408697b29",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Machine Learning/ML Concepts/Clustering.md",
-                "mode": "source",
-                "source": false
-              }
-            }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "vertical"
@@ -273,17 +152,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6acd45c8b1b3de71",
+  "active": "14984741c2f97659",
   "lastOpenFiles": [
+    "Books Reading Notes/<Python for Data Analysis>/CH-10 Data Aggregation and Group Operations.md",
+    "Machine Learning/ML Concepts/Clustering.md",
+    "Machine Learning/ML Concepts/Feature Correlations.md",
+    "Machine Learning/Models/K-Means Clustering.md",
+    "Machine Learning/Iterative Imputation.md",
+    "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md",
     "Machine Learning/Models/K-Means VS KNN.md",
     "Books To Read/<Design for Real Life>.md",
-    "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md",
     "Books Reading Notes/<Python for Data Analysis>/CH-9 Plotting and Visualization.md",
-    "Books Reading Notes/<Python for Data Analysis>/CH-10 Data Aggregation and Group Operations.md",
-    "Machine Learning/Iterative Imputation.md",
-    "Machine Learning/Regression Algorithms.md",
-    "Machine Learning/Models/KNN.md",
-    "Machine Learning/Missing Data Imputation.md",
-    "Machine Learning/Models/K-Means Clustering.md"
+    "Machine Learning/Regression Algorithms.md"
   ]
 }
