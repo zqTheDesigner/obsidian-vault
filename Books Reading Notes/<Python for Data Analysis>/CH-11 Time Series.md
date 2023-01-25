@@ -519,3 +519,140 @@ df_daily = frame.resample('D').ffill(limit=2)
 df_daily
 ```
 
+## Resampling with Periods
+
+Resampling data indexed by periods
+
+```python
+frame = pd.DataFrame(
+    np.random.standard_normal((24, 4)),
+    index=pd.period_range("1-2000", "12-2001", freq="M"),
+    columns=["Colorado", "Texas", "New York", "Ohio"],
+)
+
+frame.head()
+
+annual_frame = frame.resample('A-DEC').mean()
+annual_frame
+
+# Q-DEC: Quarterly, year ending in December
+annual_frame.resample('Q-DEC').ffill()
+
+annual_frame.resample('Q-DEC', convention='end').asfreq().ffill()
+```
+
+Rules about upsampling and downsampling about periods
+- in downsampling, the target frequency must be a subperiod of the source frequency
+- for upsampling, the target frequency myst ve a superperiod of the source frequency
+
+## Grouped Time Resampling
+
+For timeseries data, the `resample` method is semantically a group operation based on a time intervalization.
+
+
+```python
+N = 15
+
+times = pd.date_range("2017-05-20 00:00", freq="1min", periods=N)
+
+df = pd.DataFrame({"time": times, "value": np.arange(N)})
+
+# index by time and resample
+df.set_index("time").resample("5min").count()
+
+# A DataFrame contains multiple time series, marked by an additional group key column
+df2 = pd.DataFrame(
+    {
+        "time": times.repeat(3),
+        "key": np.tile(["a", "b", "c"], N),
+        "value": np.arange(N * 3),
+    }
+)
+
+df2.head()
+
+# Use pandas.Grouper() object for the resampling
+time_key = pd.Grouper(freq="5min")
+
+resampled = df2.set_index("time").groupby(["key", time_key]).sum()
+
+# When use pandas.Grouper, the time must be the index of the Series of DataFrame
+resampled
+```
+
+# 11.7 Moving Window Functions
+#pandas/time-series/plotting
+#pandas/time-series/moving-window
+Functions evaluated over a sliding window or with exponentially decaying weights.
+
+This can be useful for smoothing noisy or gappy data. 
+
+Automatically exclude missing data (like other statistical functions)
+
+```python
+
+close_px_all = pd.read_csv('datasets/stock_px.csv', parse_dates=True, index_col=0)
+
+close_px = close_px_all[["AAPL", "MSFT", "XOM"]]
+
+close_px = close_px.resample('B').ffill()
+
+close_px['AAPL'].plot()
+
+# Rolling operator, behaves similarly to resample and groupby. 
+# 250 is creating a 250 business days of moving window
+# Here, we have the 250-day moving window average of Apple's stock price
+close_px['AAPL'].rolling(250).mean().plot()
+
+std250 = close_px['AAPL'].pct_change()
+std250[std250.isna()]
+
+std250 = close_px['AAPL'].pct_change().rolling(250, min_periods=10).std()
+
+std250.plot()
+
+# Calling moving window function on a dataframe apoplies the transformation to each column
+close_px.rolling(60).mean().plot()
+```
+
+## Exponentially Weighted Functions
+Using a fixed window size with equally weighted observations - specify a constant decay factor to give more weight to more recent observations. 
+
+pandas ewm operator (exponentially weighted moving)
+
+```python
+appl_px = close_px["AAPL"]["2006":"2007"]
+
+ma30 = appl_px.rolling(30, min_periods=20).mean()
+
+ewma30 = appl_px.ewm(span=30).mean()
+
+appl_px.plot(style='k-', label="Price")
+
+ma30.plot(style='k--', label="Simple Moving Avg")
+
+ewma30.plot(style='k-', label="EW MA")
+
+plt.legend()
+```
+
+## Binary Moving Window Functions
+
+correlations and covariance need to operate on two time series.
+
+```python
+spx_px = close_px_all['SPX']
+
+spx_rets = spx_px.pct_change()
+
+returns = close_px.pct_change()
+
+corr = returns['AAPL'].rolling(125, min_periods=100).corr(spx_rets)
+
+corr.plot()
+
+# Calling rolling on the DataFrame to compute the rolling correlations of many features at once
+corr = returns.rolling(125, min_periods=100).corr(spx_rets)
+corr.plot()
+```
+
