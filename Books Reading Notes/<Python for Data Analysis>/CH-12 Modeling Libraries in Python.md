@@ -52,6 +52,8 @@ data_with_dummies
 
 A python library for describing statistical models (especially linear models) with a string-based 'formula syntax'.
 
+The description here is to describe the [[formula-based models]] like linear regression or logistic regression. Other models like decision tree or neural networks are not represented by a single formula. 
+
 `y ~ x0 + x1`
 
 a + b means terms in the design matrix created for the model
@@ -83,3 +85,20 @@ coef, resid, _, _ = np.linalg.lstsq(X, y)
 # The model metadata is retained in the design_info attribute. Can reattach the model column names to the fitted coefficients to obtain a Series
 coef = pd.Series(coef.squeeze(), index=X.design_info.column_names)
 ```
+
+## Data Transformations in Patsy Formulas
+
+Mix Python code into Patsy formulas, the library will try to find the functions in the enclosing scope
+
+```python
+y, X = patsy.dmatrices('y ~ x0 + np.log(np.abs(x1) + 1)', data)
+```
+
+Commonly used variable transformations include standardising (to mean 0 and variance 1) and Centering (subtracting the mean)
+
+```python
+y, X = patsy.dmatrices('y ~ standardize(x0) + center(x1)', data)
+
+X
+```
+
