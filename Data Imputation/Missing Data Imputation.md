@@ -3,7 +3,7 @@ Identify and replace missing values for each column in the input data prior to m
 Identify missing values in a dataset and replace them with a numeric value. 
 
 
-# Multivariate Imputation by Chained Equations (MCIE)
+# [[Multivariate Imputation]] by Chained Equations (MCIE)
 
 
 # Fully Conditional Specification

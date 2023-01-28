@@ -13,13 +13,38 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Books Reading Notes/<Python for Data Analysis>/CH-12 Modeling Libraries in Python.md",
+                "file": "Code Snippets/Data Splitting.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2c7004866bf3ae8b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Machine Learning/ML Concepts/Clustering.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "1f745e58db9d224a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Machine Learning/ML Concepts/Unsupervised Learning.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -104,7 +129,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Books Reading Notes/<Python for Data Analysis>/CH-12 Modeling Libraries in Python.md"
+                "file": "Machine Learning/ML Concepts/Unsupervised Learning.md"
               }
             }
           },
@@ -114,13 +139,13 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Books Reading Notes/<Python for Data Analysis>/CH-12 Modeling Libraries in Python.md",
+                "file": "Machine Learning/ML Concepts/Unsupervised Learning.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
-                "backlinkCollapsed": true,
+                "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
@@ -131,13 +156,14 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Books Reading Notes/<Python for Data Analysis>/CH-12 Modeling Libraries in Python.md",
+                "file": "Machine Learning/ML Concepts/Unsupervised Learning.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -152,17 +178,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "4ec032fcaf9bc307",
+  "active": "1f745e58db9d224a",
   "lastOpenFiles": [
-    "Machine Learning/Iterative Imputation.md",
-    "Machine Learning/Missing Data Imputation.md",
-    "Machine Learning/Regression Algorithms.md",
     "Machine Learning/Models/K-Means Clustering.md",
     "Machine Learning/Models/KNN.md",
-    "Machine Learning/Models/K-Means VS KNN.md",
-    "Books Reading Notes/<Python for Data Analysis>/CH-12 Modeling Libraries in Python.md",
-    "Books Reading Notes/<Python for Data Analysis>/CH-11 Time Series.md",
-    "Books Reading Notes/<Python for Data Analysis>/CH-10 Data Aggregation and Group Operations.md",
-    "Machine Learning/ML Concepts/Clustering.md"
+    "Machine Learning/Models/Regression Algorithms.md",
+    "Machine Learning/ML Concepts/Clustering.md",
+    "Machine Learning/ML Concepts/Unsupervised Learning.md",
+    "Machine Learning/ML Concepts/Supervised Learning.md",
+    "Machine Learning/ML Concepts/Multivariate Imputation.md",
+    "Data Imputation/Missing Data Imputation.md",
+    "Data Imputation/Iterative Imputation.md",
+    "Data Imputation/K-Means Imputation VS KNN Imputation.md"
   ]
 }

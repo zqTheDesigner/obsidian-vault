@@ -8,6 +8,9 @@ KNN - K nearest neighbour
 A [[Supervised Learning]] and [[Parametric & Non-parametric Algorithms#Non-parametric algorithms|non-parametric]] algorithm. 
 KNN model parameters grow with the training data by consider each training case as a parameter of the model. 
 
+	If a dataset contains no label, it falled under unsupervisied learning category
+	so KNN cannot be used in this case. 
+
 Used to solve both [[Classification]] and [[Regression]] problem statements
 
 It uses data in which there is a target column present (labelled data) to model a function to product an output for the unseen data. 

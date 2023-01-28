@@ -3,5 +3,11 @@
   "spellcheck": true,
   "spellcheckDictionary": [
     "iSH"
+  ],
+  "showUnsupportedFiles": true,
+  "trashOption": "local",
+  "spellcheckLanguages": [
+    "en-GB",
+    "en-US"
   ]
 }

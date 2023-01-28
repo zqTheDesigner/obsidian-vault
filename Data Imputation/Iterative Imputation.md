@@ -3,6 +3,7 @@ tags: iterative-imputation
 source: https://machinelearningmastery.com/iterative-imputation-for-missing-values-in-machine-learning/
 ---
 # What's iterative [[Missing Data Imputation | Imputation]]? 
+
 Defining a model to predict each missing feature as a function of all other features  and to repeat this process of estimating feature values multiple times. 
 	**e.g:**
 	1. Provided feature A, B, C and D is missed, an arbitrary value will be assigned to D (e.g. the mean of non-missing values for feature D in other rows of the data set). 

@@ -1,8 +1,14 @@
-cd## What's KNN imputation? 
+## What's KNN imputation? 
 
-KNN imputation will find the K amount of nearest neighbours from the dataset based on the observed features (the missing feature will be ignored first) and fill up the missing feature by calculating the mean value of the nearest K neighbours.
+KNN imputation is different from [[KNN|KNN Classifier]]
+
+KNN imputation finds the K amount of nearest neighbours from the (complete) dataset based on the observed features (the missing feature will be ignored first) and fill up the missing feature by calculating the mean value of the nearest K neighbours.
 
 Here, we talking about "nearest" distance by calculating the [[Euclidean Distance]] between the data points. (Other ways of distance calculation may be used, but not as popular as Euclidean Distance)
+
+	There is also weighted KNN imputation, which the distance be considered as the
+	weights when calculating the missing features, nearer neighbour weighted more and
+	further neighbours weighted lesser.
 
 **For example**: we have feature A, B, C in the dataset, and one of the row missed feature C,
 We'll first find the K neighbours based on observed feature A and B, then use the mean value of the observed C to calculated the missed C. 
