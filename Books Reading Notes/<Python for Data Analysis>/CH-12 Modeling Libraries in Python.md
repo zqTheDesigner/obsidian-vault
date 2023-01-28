@@ -102,3 +102,110 @@ y, X = patsy.dmatrices('y ~ standardize(x0) + center(x1)', data)
 X
 ```
 
+## Categorical Data and Patsy
+When you use non-numeric terms in a Patsy formula, they are converted to dummy variables by default. 
+
+```python
+data = pd.DataFrame({
+	'key1': ['a', 'b', 'b', 'b', 'a', 'b', 'a', 'b'],
+	'key2': [0, 1, 0, 1,0, 1, 0, 0],
+	'v1' : [1, 2, 3, 4, 5, 6, 7, 8],
+	'v2': [-1., 0, 2.5, -0.5, 4.0, -1.2, 0.2, -1.7]
+})
+
+y,X = patsy.dmatrices('v2 ~ key1', data)
+
+# If omit the intercept from the model, columns for each category value will be included in the model design matrix
+# the +0 part will omit the intercept
+y, X = patsy.dmatrices('v2 ~ key1 + 0', data)
+X
+
+# Numeric columns can be interpreted as categorical with the C function
+y, X = patsy.dmatrices('v2 ~ C(key2)', data)
+
+X
+
+# When using multiple categorical terms in a model 
+
+data['key2'] = data['key2'].map({0: 'zero', 1:'one'})
+
+data
+
+y, X = patsy.dmatrices('v2 ~ key1 + key2', data)
+
+y, X = patsy.dmatrices('v2 ~ key1 + key2 + key1:key2', data)
+```
+
+# 12.3 Introduction to statsmodels
+#statsmodels
+
+statsmodels is a Python library for fitting many kinds of statistical models, performing statistical tests and data exploration and visualisation.
+
+Some kinds of models found in statsmodels:
+- Linear models, generalised linear models and robust linear models
+- Linear mixed effects models
+- Analysis of variance (ANOVA) methods
+- Time series processes and state space models
+- Generalised methods of moments
+
+Use the modeling interfaces with Patsy formulas and pandas DataFrame objects
+
+## Estimating Linear Models
+
+```python
+import statsmodels.api as sm
+import statsmodels.formula.api as smf
+
+```
+
+## Estimating Linear Models
+
+```python
+# To make the example reproducible
+rng = np.random.default_rng(seed=12345)
+
+# helper function for generating normally distributed data with a particular mean and variance
+def dnorm(mean, variance, size= 1):
+	if isinstance(size, int):
+		size = size,
+	return mean + np.sqrt(variance) * rng.standard_normal(*size)
+
+N = 100
+
+X = np.c_[
+	dnorm(0, 0.4, size=N),
+	dnorm(0, 0.6, size=N),
+	dnorm(0, 0.2, size=N)
+]
+
+eps = dnorm(0, 0.1, size=N)
+
+# 'true' model
+beta = [0.1, 0.3, 0.5]
+
+y = np.dot(X, beta) + eps
+
+
+# A linear model is generally fitted with an intercept term
+# use sm.add_constant function to add an intercept column
+X_model = sm.add_constant(X)
+X_model[:5]
+
+# fit an ordinary least square linear regression
+model = sm.OLS(y, X)
+results = model.fit()
+
+# Print a model detailing dignostic output of the model
+print(results.summary())
+
+data = pd.DataFrame(X, columns=['col0', 'col1', 'col2'])
+
+data['y'] = y
+
+results = smf.ols('y ~ col0 + col1 + col2', data=data).fit()
+
+results.params
+
+# Compute the predicted values given the estimated model parameters
+results.predict(data[:5])
+```
