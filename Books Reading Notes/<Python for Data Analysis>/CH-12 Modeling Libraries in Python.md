@@ -209,3 +209,117 @@ results.params
 # Compute the predicted values given the estimated model parameters
 results.predict(data[:5])
 ```
+
+## Estimating Time Series Processes
+
+Autoregressive processes, Kalman filtering, other state space models and multivariable autoregressive model. 
+
+```python
+# Simulate some time series data with an autoregressive structure and noise
+# This data has an AR(2) structure (two lags) with parameters 0.8 and -0.4. 
+
+init_x = 4
+
+values = [init_x, init_x]
+
+N = 1000
+
+b0 = 0.8
+b1 = -0.4
+noise = dnorm(0, 0.1, N)
+
+for i in range(N):
+	new_x = values[-1] * b0 + values[-2] * b1 + noise[i]
+	values.append(new_x)
+
+# Fit the model with some larger number of lags
+from statsmodels.tsa.ar_model import AutoReg
+
+MAXLAGS = 5
+model = AutoReg(values, MAXLAGS)
+
+results = model.fit()
+
+results.params
+```
+
+# 12.4 Introduction to scikit-learn
+#scikit-learn #cross-validation
+
+General-purpose Python machine learning toolkits. 
+
+```python
+train = pd.read_csv('./datasets/titanic/train.csv')
+test = pd.read_csv('./datasets/titanic/test.csv')
+
+train.head(4)
+
+# Libraries like statsmodels and scikit-learn generally cannot be fed missing data. 
+# Look at the columns to see if there are ny that contain missing data.
+train.isna().sum()
+
+test.isna().sum()
+
+# A model is fitted on a training dataset and then evaluated on an out-of-sample testing dataset
+# Use the median of the training data set to fill the nulls in both tables
+
+impute_value = train['Age'].median()
+
+train['Age'] = train['Age'].fillna(impute_value)
+
+test['Age'] = test['Age'].fillna(impute_value)
+
+
+# Add a column IsFemale to encode the 'Sex' column
+train['IsFemale'] = (train['Sex'] == 'female').astype(int)
+test['IsFemale'] = (test['Sex'] == 'female').astype(int)
+
+predictors = ['Pclass', 'IsFemale', 'Age']
+
+X_train = train[predictors].to_numpy()
+X_test = test[predictors].to_numpy()
+
+y_train = train['Survived'].to_numpy()
+
+X_train[:5]
+
+from sklearn.linear_model import LogisticRegression
+
+model = LogisticRegression()
+
+model.fit(X_train, y_train)
+
+y_predict = model.predict(X_test)
+
+y_predict[:10]
+
+# Compute the accuracy percentage 
+# (y_true == y_predict).mean()
+
+```
+
+## #cross-validation 
+
+```python
+# Cross validation
+# Some models have build-in cross-validation
+
+from sklearn.linear_model import LogisticRegressionCV
+
+model_cv = LogisticRegressionCV(Cs=10)
+model_cv.fit(X_train, y_train)
+
+y_predict = model_cv.predict(X_test)
+
+y_predict[:10]
+
+# To do cross validation by hand, use cross_val_score helper function
+
+from sklearn.model_selection import cross_val_score
+
+model = LogisticRegression(C=10)
+
+scores = cross_val_score(model, X_train, y_train, cv=4)
+
+scores
+```
