@@ -4,83 +4,35 @@
     "type": "split",
     "children": [
       {
-        "id": "41113b82c3c06953",
+        "id": "d895c427a5ee0a6f",
         "type": "tabs",
         "children": [
           {
-            "id": "c3d6cc00d7190f9c",
+            "id": "5206329989e66505",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Books Reading Notes/<Python for Data Analysis>/CH-12 Modeling Libraries in Python.md",
+                "file": "Templates/Article Reading Notes.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "7478e1c3afb75bee",
+            "id": "5749be4e2244b87e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Books To Read/<Introduction to Machine Learning with Python>.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "306635a9381efcfb",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Books To Read/<Python Data Science Handbook>.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d2b539c6294ca885",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Books To Read/<Python Machine Learning>.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "10add77e526df707",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Books To Read/<Hands-On Machine Learning with Scikit-Learn, Keras and TensorFlow>.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4857c57ed23d716d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Time Series/Autoregression (AR).md",
+                "file": "Templates/Books Reading Summary.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -165,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Books To Read/<Hands-On Machine Learning with Scikit-Learn, Keras and TensorFlow>.md"
+                "file": "Templates/Books Reading Summary.md"
               }
             }
           },
@@ -175,7 +127,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Books To Read/<Hands-On Machine Learning with Scikit-Learn, Keras and TensorFlow>.md",
+                "file": "Templates/Books Reading Summary.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -192,7 +144,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Books To Read/<Hands-On Machine Learning with Scikit-Learn, Keras and TensorFlow>.md",
+                "file": "Templates/Books Reading Summary.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -214,17 +166,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "10add77e526df707",
+  "active": "5749be4e2244b87e",
   "lastOpenFiles": [
+    "Templates/Article Reading Notes.md",
+    "Templates/Books Reading Summary.md",
+    "Books Reading Notes/<Python for Data Analysis>.md",
+    "Time Series/Autoregression (AR).md",
+    "Books To Read/<Hands-On Machine Learning with Scikit-Learn, Keras and TensorFlow>.md",
     "Books To Read/<Python Machine Learning>.md",
     "Books To Read/<Python Data Science Handbook>.md",
     "Books To Read/<Introduction to Machine Learning with Python>.md",
     "Books Reading Notes/<Python for Data Analysis>/CH-12 Modeling Libraries in Python.md",
-    "Time Series/Autoregression (AR).md",
-    "Machine Learning/ML Concepts/Unsupervised Learning.md",
-    "Machine Learning/Models/K-Means Clustering.md",
-    "Machine Learning/Models/KNN.md",
-    "Machine Learning/Models/Regression Algorithms.md",
-    "Machine Learning/ML Concepts/Clustering.md"
+    "Machine Learning/ML Concepts/Unsupervised Learning.md"
   ]
 }
