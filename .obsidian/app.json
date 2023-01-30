@@ -9,5 +9,7 @@
   "spellcheckLanguages": [
     "en-GB",
     "en-US"
-  ]
+  ],
+  "promptDelete": false,
+  "attachmentFolderPath": "media"
 }
