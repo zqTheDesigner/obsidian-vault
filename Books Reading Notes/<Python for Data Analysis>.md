@@ -1,4 +1,0 @@
----
-publisher: O'Reilly
-
----
