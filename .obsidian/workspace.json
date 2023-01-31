@@ -11,8 +11,12 @@
             "id": "c73cd95d89a75a2a",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Books Reading Notes/<Python for Data Analysis>/CH-13 Data Analysis Examples.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -100,7 +104,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Articles Reading Notes/Original Articles/Futura grace under pressure.md"
+                "file": "Books Reading Notes/<Python for Data Analysis>/CH-13 Data Analysis Examples.md"
               }
             }
           },
@@ -110,7 +114,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Articles Reading Notes/Original Articles/Futura grace under pressure.md",
+                "file": "Books Reading Notes/<Python for Data Analysis>/CH-13 Data Analysis Examples.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -127,7 +131,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Articles Reading Notes/Original Articles/Futura grace under pressure.md",
+                "file": "Books Reading Notes/<Python for Data Analysis>/CH-13 Data Analysis Examples.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -149,7 +153,7 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "9d1ad4a2c01798dc",
+  "active": "c73cd95d89a75a2a",
   "lastOpenFiles": [
     "media/1!U2GbP_Fn68Sy2rgiNOblQg.png",
     "media/Pasted image 20230131005532.jpg",

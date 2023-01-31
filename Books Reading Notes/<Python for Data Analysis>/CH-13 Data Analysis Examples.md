@@ -1,4 +1,4 @@
-To extract meaning from the raw data.
+githubTo extract meaning from the raw data.
 
 # 13.1 Bitly Data from 1.USA.gov
 
@@ -262,3 +262,194 @@ rating_with_genre = pd.merge(pd.merge(movies_exploded, ratings),users)
 genre_ratings = (rating_with_genre.groupby(['genre', 'age'])['rating'].mean().unstack('age'))
 genre_ratings
 ```
+
+# 13.3 US Baby Names 1880 - 2010
+
+```python
+# Use Unix syntax to loot at first 10 lines of a file
+!head -n 10 'datasets/babynames/yob1880.txt'
+```
+
+```python
+names1880 = pd.read_csv('datasets/babynames/yob1880.txt', names = ['name', 'sex', 'births'])
+
+# calculate total number of both each year
+names1880.groupby('sex').sum()
+
+# Assemble all of the data into a single DataFrame 
+
+pieces = []
+
+for year in range(1880, 2011):
+	path = f'datasets/babynames/yob{year}.txt'
+	frame = pd.read_csv(path, names=['name', 'sex', 'births'])
+
+	# Add a column of year
+	frame['year'] = year
+	pieces.append(frame)
+
+# Concatenate everything into a single DataFrame
+names = pd.concat(pieces, ignore_index=True)
+
+total_births = names.pivot_table('births', index='year', columns='sex', aggfunc=sum)
+
+total_births.tail()
+
+total_births.plot(title='Total births by sex and year')
+
+# Insert a column prop with the fraction of babies given each name relative to the total number of birth
+# How popular the name is
+
+def add_prop(group):
+	group['prop'] = group['births'] / group['births'].sum()
+	return group
+
+names = names.groupby(['year', 'sex']).apply(add_prop)
+
+# Sanity check to verify the prop will sum to 1
+names.groupby(['year', 'sex'])['prop'].sum()
+
+# Extract a subset of the data to facilitate further analysis
+# Top 1000 names for each sex/year combination
+
+def get_top1000(group):
+	return group.sort_values('births', ascending=False)[:1000]
+
+grouped = names.groupby(['year', 'sex'])
+
+top1000 = grouped.apply(get_top1000)
+
+top1000.head()
+
+# drop the group index 
+top1000 = top1000.reset_index(drop=True)
+
+
+```
+
+## Analyzing Naming Trends
+
+```python
+boys = top1000[top1000['sex']=='M']
+
+girls = top1000[top1000['sex']=='F']
+
+total_births = top1000.pivot_table('births', index='year', columns='name', aggfunc=sum)
+
+total_births.info()
+
+# Plot names trends with DataFrame's plot method
+
+subset = total_births[['John', 'Harry', 'Mary', 'Marilyn']]
+
+subset.plot(subplots=True, figsize = (12, 10), title = 'Number of births per year')
+
+```
+
+## Measuring the increase in naming diversity
+
+```python
+
+# Proportion of births represented by top 1000 most popular names
+
+table = top1000.pivot_table("prop", index="year", columns="sex", aggfunc=sum)
+
+table.plot(title='Sum of table 1000.prop by year & sex', yticks=np.linspace(0, 1,2, 13))
+
+# Number of distinct name taken in order of popularity from highest ot lowest]
+# boy names from 2010
+
+df = boys[boys['year'] == 2010]
+
+df
+
+# Calculate how many most popular name it takes to reach 50% 
+prop_cumsum = df['prop'].sort_values(ascending=False).cumsum()
+
+# searchsorted method return the cumulative sum at provided value
+prop_cumsum.searchsorted(0.5)
+
+df = boys[boys['year'] == 1900]
+
+in1900 = df.sort_values('prop', ascending=False).prop.cumsum()
+
+in1900.searchsorted(0.5) + 1
+
+# Apply this operation to each year/sex combination
+
+def get_quantile_count(group, q=0.5):
+	group = group.sort_values('prop', ascending=False)
+	return group.prop.cumsum().searchsorted(q) + 1
+
+diversity = top1000.groupby(['year', 'sex']).apply(get_quantile_count)
+
+diversity.unstack()
+
+diversity.unstack().plot.line(title='Number of popular names in top 50%')
+```
+
+## The 'last letter' revolution
+
+To see how the distribution of boy names' final letter has changed.
+
+```python
+def get_last_letter(x):
+    return x[-1]
+
+
+last_letters = names["name"].map(get_last_letter)
+
+last_letters.name = "last_letter"
+
+table = names.pivot_table(
+    "births", index=last_letters, columns=["sex", "year"], aggfunc=sum
+)
+
+subtable = table.reindex(columns=[1910, 1960, 2010], level='year')
+
+subtable.head()
+
+letter_prop = subtable / subtable.sum()
+
+import matplotlib.pyplot as plt
+
+fig, axes = plt.subplots(2, 1, figsize=(10, 8))
+
+letter_prop["M"].plot(kind='bar', rot=0, ax=axes[0], title='Male')
+letter_prop["F"].plot(kind="bar", rot=0, ax=axes[1], title='Female', legend=False)
+
+# Normalize by year and sex and select a subset of letter for the boy names
+# transposing to make each column a time series
+
+letter_prop = table / table.sum()
+
+dny_ts = letter_prop.loc[['d', 'n', 'y'], 'M'].T
+
+dny_ts.head()
+
+dny_ts.plot()
+```
+
+### Boy names that become girl names
+
+```python
+all_names = pd.Series(top1000['name'].unique())
+
+lesly_like = all_names[all_names.str.contains('Lesl')]
+
+filtered = top1000[top1000['name'].isin(lesly_like)]
+
+filtered.groupby('name')['births'].sum()
+
+# aggregate by sex and year, normalize within year
+
+table = filtered.pivot_table("births", index="year", columns="sex", aggfunc="sum")
+
+table = table.div(table.sum(axis='columns'), axis='index')
+
+table.tail()
+
+table.plot(style={'M':'k-', 'F':'k--'})
+
+```
+
