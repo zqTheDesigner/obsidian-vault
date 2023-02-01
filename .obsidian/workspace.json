@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "7ad3ee711d789c9d",
+        "id": "09a5f7a31098004e",
         "type": "tabs",
         "children": [
           {
-            "id": "c73cd95d89a75a2a",
+            "id": "928611e6fd7e1e7e",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -48,7 +48,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#gothic",
+                "query": "tag:#Futura",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -153,17 +153,17 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c73cd95d89a75a2a",
+  "active": "928611e6fd7e1e7e",
   "lastOpenFiles": [
-    "media/1!U2GbP_Fn68Sy2rgiNOblQg.png",
-    "media/Pasted image 20230131005532.jpg",
-    "Articles Reading Notes/Original Articles/Futura grace under pressure.md",
+    "Books Reading Notes/<Python for Data Analysis> Index.md",
     "Articles Reading Notes/Conscious Design Systems.md",
-    "Articles Reading Notes/Finding your T-Shape as a Generalist Designer.md",
-    "media/A_circular_with_several_typed_paragraphs_that_describes_why_Fraktur_is_no_longer_to_be_used._It_also.jpg",
-    "media/Japanese_zen_master_Sengai’s_famous_ink_calligraphy_with_a_rectangle,_triangle_and_circle.jpg",
-    "media/Logos_featuring_Futura!_they_include_M6,_Gillette,_Nike,_Absolut_Vodka,_Canal+,_Domino’s_Pizza,_Loui.jpg",
-    "media/Malevich’s_black_square_is_a_black_square_one_a_white_ground._That’s_it.jpg",
-    "media/Portrait_of_Paul_Renner._He_is_a_very_dapper,_clean_cut_man_with_piercing_eyes.jpg"
+    "Articles Reading Notes/Original Articles/Futura - grace under pressure.md",
+    "1_Boz0uPYpYtta1-w9XfVsjw.md",
+    "media/1_Boz0uPYpYtta1-w9XfVsjw 1.webp",
+    "Articles Reading Notes/Futura - grace under pressure.md",
+    "media/Pasted image 20230131005810.jpg",
+    "media/Pasted image 20230131005722.jpg",
+    "Books Reading Notes/<Python for Data Analysis>/CH-13 Data Analysis Examples.md",
+    "media/1!U2GbP_Fn68Sy2rgiNOblQg.png"
   ]
 }

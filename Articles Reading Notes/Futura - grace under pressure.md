@@ -2,7 +2,7 @@
 tags: futura, typography, font
 ---
 
-origina_article: [[Articles Reading Notes/Original Articles/Futura grace under pressure]] 
+Original Article: [[Articles Reading Notes/Original Articles/Futura - grace under pressure]] 
 
 Futura was born alongside a rash of German grotesque typefaces that were created in the late 1920s .
 

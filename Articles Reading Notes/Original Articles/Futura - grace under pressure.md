@@ -3,8 +3,7 @@ source: https://uxdesign.cc/futura-the-winter-soldier-of-typefaces-4ad2a4a2d69f
 ---
 
 ## Paul Renner’s quest for “sachlich” created a typeface that is as technically astute as it is elegant
-
-![Japanese zen master Sengai’s famous ink calligraphy with a rectangle, triangle and circle.](https://miro.medium.com/max/781/1*Boz0uPYpYtta1-w9XfVsjw.jpeg)
+![Japanese zen master Sengai’s famous ink calligraphy with a rectangle, triangle and circle.](1_Boz0uPYpYtta1-w9XfVsjw.webp)
 
 Sengai’s The Universe
 
@@ -18,7 +17,7 @@ From its initial cutting in 1927 to various revisions, updates, clones and font 
 
 > “every typeface has its own DNA, its own voice, and its own hidden history of intrigue and excess.”
 
-![The Nasa moon landing sign features two flat circles in the top half. The left circle has the Americas and Antartica. The left circle has the rest of the continents, Europe, Asia, Africa and Australia. In Futura capital letters, it reads “Here men from the planet Earth first set foot upon the moon July 1969 AD. We came in peace for all mankind.” It is signed by three moon landing astronauts and President Richard Nixon.](https://miro.medium.com/max/1094/1*Xhrwm0l9SnyobFCVxGAnng.jpeg)
+![The Nasa moon landing sign features two flat circles in the top half. The left circle has the Americas and Antartica. The left circle has the rest of the continents, Europe, Asia, Africa and Australia. In Futura capital letters, it reads “Here men from the planet Earth first set foot upon the moon July 1969 AD. We came in peace for all mankind.” It is signed by three moon landing astronauts and President Richard Nixon.](media/The_Nasa_moon_landing_sign_features_two_flat_circles_in_the_top_half._The_left_circle_has_the_Americ.jpg)
 
 So, like Bucky Barnes, Futura too is trying to live each day as it comes, dealing with its troublesome past, and coming to terms with an immortal body that doesn’t age. It is the closest a typeface can come to being a rock star.
 
@@ -44,7 +43,7 @@ In _Art and Race_, Schultze-Naumburg codified the common and popular eugenist, a
 
 In his book and talks, Schultze-Naumburg relied on a comparative analysis of photos of people with genetic abnormalities, tribal art and modern avant-garde Western art. By showing their obvious similarity, Shultze-Naumburg argued that this kind of art was the product of primitive, perverse minds rooted in bad genes.
 
-![This excerpt from Schultze-Naumburg’s book shows abstract paintings on the left and on the right deformed bodies of a woman, the head of man with a nervous disorder, a child with what appears to be Down’s syndrome and another with malnutrition.](https://miro.medium.com/max/906/1*6haoQFy_vgm2mOboqbSKog.jpeg)
+![This excerpt from Schultze-Naumburg’s book shows abstract paintings on the left and on the right deformed bodies of a woman, the head of man with a nervous disorder, a child with what appears to be Down’s syndrome and another with malnutrition.](media/This_excerpt_from_Schultze-Naumburg’s_book_shows_abstract_paintings_on_the_left_and_on_the_right_def.jpg)
 
 Paul Schultze-Naumburg, _Kunst und Rasse_. Munich: J. F. Lehmanns Verlag, 1928, pp. 98–99:
 
@@ -66,7 +65,7 @@ Rosalind McKever, Harry M Weinrebe Curatorial Fellow at the National Gallery (UK
 
 In 1925, the curator Gustav Hartlaub held an exhibition in Mannheim titled ‘Neue Sachlichkeit: Deutsche Malerei seit dem Expressionismus’ (New Objectivity: German Painting Since Expressionism). The exhibition focused in particular on the work of two phenomenal artists, George Grosz and Otto Dix (they are described by [the Tate](https://www.tate.org.uk/art/art-terms/n/neue-sachlichkeit) as “two of the greatest realist painters of the twentieth century”). Grosz and Dix, in a digression from Expressionism, wanted to return art to its more technical roots and social purpose. In particular, they wanted to criticise the corruption of the Weimar Republic’s incompetent politicians for creating avoidable human suffering. This sparked a major wave of questioning and criticism of people in authority through various art forms, especially, painting and photography. In my opinion, even today, contemporary political cartooning across the world borrows the idiom innovated by Neue Sachlichkeit.
 
-![This amazing painting by George Grotz shows large fat men with piles on money in the foreground, looking at injured war veterans and poor with contempt. All the figures are fantastic caricatures.](https://miro.medium.com/max/938/1*6cY4cnLY8OUuloh242w35Q.jpeg)
+![This amazing painting by George Grotz shows large fat men with piles on money in the foreground, looking at injured war veterans and poor with contempt. All the figures are fantastic caricatures.](media/This_amazing_painting_by_George_Grotz_shows_large_fat_men_with_piles_on_money_in_the_foreground,_loo.jpg)
 
 Toads of Property by George Grosz (1920). Image from the National Galleries of Scotland.
 
@@ -96,7 +95,7 @@ Tschichold, [no shrinking violet about his own greatness](https://www.theguardia
 
 Apart from German modern art, Renner and Tschichold were huge fans of what was being achieved within Russian Constructivism. Cézanne’s painting had a major influence on the Russian-Ukranian-Polish master, Kazimir Malevich. Malevich’s own brand of abstract painting would be known as [Suprematism](https://magazine.artland.com/art-movement-suprematism/#:~:text=Suprematism%20was%20an%20abstract%20art,without%20ceasing%20to%20be%20art.). His vision and philosophy of art was summarised in the Black Square, which became his motif. Malevich is seen as the founder of Russian abstract art. In turn, his work provoked a response in the next generation of Russian artists, who then went to a further radical extreme.
 
-![Malevich’s black square is a black square one a white ground. That’s it!](https://miro.medium.com/max/1094/1*lD1rIuwVRgAmkVjZF9x0QQ.jpeg)
+![Malevich’s black square is a black square one a white ground. That’s it!](media/Malevich’s_black_square_is_a_black_square_one_a_white_ground._That’s_it.jpg)
 
 Kazimir Malevich_Black Square_ 1913© State Tretyakov Gallery, Moscow
 
@@ -104,7 +103,7 @@ Led by Alexander Rodchenko, El Lissitzky, and the Stenberg Brothers, Russian Con
 
 > Russian Constructivism characteristically used minimal color palettes, often just red, black and sometimes yellow. These works frequently had diagonal elements with circular and angled type and images. The resulting work was extremely dramatic, containing layered images coupled with powerful type treatments.
 
-![This painting is has all the features of Russian constructivism: things at sharp angles and uses red, black and the negative space in a highly innovative fashion.](https://miro.medium.com/max/1094/1*Ib-WtrZl5Ic5TCmxW-Sl8Q.jpeg)
+![This painting is has all the features of Russian constructivism: things at sharp angles and uses red, black and the negative space in a highly innovative fashion.](media/This_painting_is_has_all_the_features_of_Russian_constructivism!_things_at_sharp_angles_and_uses_red.jpg)
 
 _Beat the Whites with the Red Wedge, El Lissitzky, 1919._
 
@@ -114,7 +113,7 @@ Inspired by Russian Constructivism, Jan Tschichold condemned all typefaces excep
 
 Renner approved of all these ideas.
 
-![The international A system from A0 to A5](https://miro.medium.com/max/791/1*r01qK3Q4mD3WB9vhEFzDKA.jpeg)
+![The international A system from A0 to A5](media/The_international_A_system_from_A0_to_A5.jpg)
 
 The A series paper size system
 
@@ -140,7 +139,7 @@ I used to think that typography was a genteel pastime with zero health hazards, 
 
 **A reversal of positions**
 
-![This poster is just a photo of Hitler’s head and says “Hitler”. It was used to promote his political ambitions.](https://miro.medium.com/max/781/1*7fTn1AiKgIVxztXzrRi8cA.jpeg)
+![This poster is just a photo of Hitler’s head and says “Hitler”. It was used to promote his political ambitions.](media/This_poster_is_just_a_photo_of_Hitler’s_head_and_says_“Hitler”._It_was_used_to_promote_his_political.jpg)
 
 Iconic Hilter poster utilising a san serif typeface (not Futura) and photograph by Heinrich Hoffman. Source: [https://www.ushmm.org/propaganda/archive/poster-hitler-photo/](https://www.ushmm.org/propaganda/archive/poster-hitler-photo/)
 
@@ -150,7 +149,7 @@ As [Typeroom](https://www.typeroom.eu/a-nazi-font-banned-by-nazis-fraktur-legacy
 
 > “On January 3, 1941, the Nazi Party ended this controversy in favour of the modern scripts including Antiqua. Martin Bormann issued a circular to all public offices which declared Fraktur (and its corollary, the Sütterlin-based handwriting) to be Judenlettern (Jewish letters) and prohibited their further use.”
 
-![A circular with several typed paragraphs that describes why Fraktur is no longer to be used. It also bears a stamp and is on official government letterhead.](https://miro.medium.com/max/1094/1*HCNDY2dalRmiVSEvIP5REw.jpeg)
+![A circular with several typed paragraphs that describes why Fraktur is no longer to be used. It also bears a stamp and is on official government letterhead.](media/A_circular_with_several_typed_paragraphs_that_describes_why_Fraktur_is_no_longer_to_be_used._It_also.jpg)
 
 After singing hymns of praise for Fraktur as the sina qua non of the German identity, they now felt it was too Jewish. This about-turn was a reflection on how Paul Schultze-Naumburg’s love of classical clean lines and proportions in design had taken root over time in the Nazi party. Dr. Lara Day, notes in a [doctoral thesis summary](https://era.ed.ac.uk/handle/1842/17964?show=full) on Schultze-Naumburg :
 
@@ -174,22 +173,22 @@ If one had to hazard a guess as to why it is Futura, more than any of the other 
 
 When we say Renner designed Futura, what we mean is that Renner laid a foundation that many others have come in and tinkered with. Right at the beginning, at the Bauer type foundry, the process of developing Futura was highly collaborative and the latest technology in mechanical drawing (such as a pantograph) was used to design the letters. Renner’s writings even seem to anticipate computer-aided design. Notwithstanding this process, Futura’s letters seem very close the foundational round forms that students of calligraphy are recommended to start with. Renner began his career as an instructor teaching a fundamental course in drawing letters.
 
-![the Future typeface on a chart](https://miro.medium.com/max/1094/1*ExrFeOw96e6ypVbYpmQ5CA.png)
+![the Future typeface on a chart](media/the_Future_typeface_on_a_chart.png)
 
 Futura
 
 As I write these pieces of type history on Medium, I’ve learned to visually identify many typefaces but the pleasure of encountering Futura in the myriad and diverse ways it is used, from posters, logos, instrument panels to council bin bags, is a pleasure like no other. It is arguably the most ubiquitous typeface. You can always tell it from the small ‘a’ or the points on the letters A, W, N and M. They’re exhilarating. The small ‘t’, nothing more than a cross, is communion without a church and a Sunday service.
 
-![](https://miro.medium.com/max/78/1*U2GbP_Fn68Sy2rgiNOblQg.png)
+![](media/1!U2GbP_Fn68Sy2rgiNOblQg.png)
 
 The most unique small ‘a’ in the business
 
 As I slip my feet into a pair of Nikes or classic adidas kicks marked with Futura, I am now always reminded about what Renner endured for his idealism, talent and rationality. Futura declares that anyone who works hard, who focuses on “sachlich”, can make good art — not just those with the appropriate ancestry. It stiffens my spine and makes me walk a few inches taller.
 
-Not all heroes wear capes. One created Futura.
+Not all heroes wear capes. One created #Futura.
 
-His name was Paul Renner.
+His name was #Paul-Renner.
 
-![Portrait of Paul Renner. He is a very dapper, clean cut man with piercing eyes.](https://miro.medium.com/max/458/1*3vQn8bWhwyUhFDB6Dy3eqQ.jpeg)
+![Portrait of Paul Renner. He is a very dapper, clean cut man with piercing eyes.](media/Portrait_of_Paul_Renner._He_is_a_very_dapper,_clean_cut_man_with_piercing_eyes.jpg)
 
 Paul Renner\

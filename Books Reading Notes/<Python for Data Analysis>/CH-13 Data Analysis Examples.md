@@ -453,3 +453,63 @@ table.plot(style={'M':'k-', 'F':'k--'})
 
 ```
 
+# 13.4 USDA Food Database
+
+```python
+# load the file into python
+import json
+
+db = json.load(open("./datasets/usda_food/database.json"))
+
+len(db)
+
+db[0].keys()
+
+db[0]['nutrients'][0]
+
+nutrients = pd.DataFrame(db[0]['nutrients'])
+
+nutrients.head()
+
+# Converting a list of dictionaries to a DataFrame
+
+info_keys = ['description', 'group', 'id', 'manufacturer']
+
+info = pd.DataFrame(db, columns=info_keys)
+
+info.head()
+
+info.info()
+
+pd.value_counts(info['group'])[:10]
+
+# analyse on all of the nutrient data
+# Assemble the nutrients for each food into a single large table
+
+# Convert each list of food nutrients to a dataFrame
+# add a column for food it
+# concatenate the data
+
+nutrients = []
+
+for rec in db:
+	fnuts = pd.DataFrame(rec['nutrients'])
+	fnuts['id'] = rec['id']
+	nutrients.append(fnuts)
+
+nutrients = pd.concat(nutrients, ignore_index=True)
+
+nutrients.head()
+
+# Check and drop the duplicates
+nutrients.duplicated().sum()
+
+nutrients = nutrients.drop_duplicates()
+
+col_mapping = {"description": "food", "group": "fgroup"}
+
+info = info.rename(columns=col_mapping, copy=False)
+
+info.info()
+
+```
