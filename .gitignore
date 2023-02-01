@@ -2,3 +2,4 @@
 # each platform can have it's own Obsidian customization.
 .obsidian/workspace-mobile.json
 .obsidian/core-plugins.json
+# .obsidian/workspace.json
