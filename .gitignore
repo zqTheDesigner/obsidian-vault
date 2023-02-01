@@ -1,3 +1,4 @@
 # This folder can always be created as needed from the Obsidian app.
 # each platform can have it's own Obsidian customization.
-# .obsidian
+# .obsidian/workspace-mobile.json
+# .obsidian/core-plugins.json
