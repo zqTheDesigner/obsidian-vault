@@ -46,3 +46,5 @@ git push
 - To un-mount: 
 	- `umount /mnt/zq/Obsidian`
 
+
+
