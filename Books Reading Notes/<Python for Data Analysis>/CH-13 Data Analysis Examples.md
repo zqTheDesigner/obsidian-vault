@@ -1,4 +1,4 @@
-githubTo extract meaning from the raw data.
+To extract meaning from the raw data.
 
 # 13.1 Bitly Data from 1.USA.gov
 

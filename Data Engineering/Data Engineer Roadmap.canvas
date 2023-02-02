@@ -1,0 +1,16 @@
+{
+	"nodes":[
+		{"id":"3e0fd15650fa3203","x":-604,"y":-412,"width":212,"height":148,"type":"text","text":"# Data Mender"},
+		{"id":"0ab2e9e9b99062a3","x":143,"y":-412,"width":198,"height":148,"type":"text","text":"# Time Series"},
+		{"id":"0eb7c039b421dbb7","x":-754,"y":-179,"width":199,"height":60,"type":"text","text":"Model (API) Deployment"},
+		{"id":"f134773b6686292f","x":-469,"y":-179,"width":250,"height":60,"type":"text","text":"Data Mender V1 (Refer to Notion roadmap)"},
+		{"id":"034269b88793a815","x":-19,"y":-185,"width":261,"height":71,"type":"text","text":"[[Random Forest#For Time Series]]"},
+		{"id":"a84ad9f4e21ba405","x":288,"y":-179,"width":282,"height":60,"type":"text","text":"[[Gradient Boosting#For Time Series]]"}
+	],
+	"edges":[
+		{"id":"ca94cf5f45948db7","fromNode":"0ab2e9e9b99062a3","fromSide":"bottom","toNode":"034269b88793a815","toSide":"top"},
+		{"id":"c7916c70e12fb989","fromNode":"3e0fd15650fa3203","fromSide":"bottom","toNode":"0eb7c039b421dbb7","toSide":"top"},
+		{"id":"00c170d401fefae6","fromNode":"3e0fd15650fa3203","fromSide":"bottom","toNode":"f134773b6686292f","toSide":"top"},
+		{"id":"1dc312296cb5862b","fromNode":"0ab2e9e9b99062a3","fromSide":"bottom","toNode":"a84ad9f4e21ba405","toSide":"top"}
+	]
+}
