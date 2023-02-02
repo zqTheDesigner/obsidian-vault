@@ -1,4 +1,4 @@
-[Original Article](https://gist.github.com/DannyQuah/f686c0e43b741468e12515cd79017489)
+cd[Original Article](https://gist.github.com/DannyQuah/f686c0e43b741468e12515cd79017489)
 
 ### iPad preparation
 - Download iSH Shell App

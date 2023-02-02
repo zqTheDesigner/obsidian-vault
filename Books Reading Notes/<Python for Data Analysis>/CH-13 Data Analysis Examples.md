@@ -512,4 +512,28 @@ info = info.rename(columns=col_mapping, copy=False)
 
 info.info()
 
+col_mapping = {'description':'nutrient', 'group':'nutgroup'}
+
+nutrients = nutrients.rename(columns=col_mapping, copy=False)
+
+nutrients
+
+# Merge info into nutrients
+ndata = pd.merge(nutrients, info, on='id')
+ndata.info()
+
+result = ndata.groupby(['nutrient', 'fgroup'])['value'].quantile(0.5)
+result['Zinc, Zn'].sort_values().plot(kind='barh')
+
+result['Zinc, Zn'].sort_values()
+
+# Use idxmax or argmax Series method to find which food is most dense in each nutrient
+
+by_nutrient = ndata.groupby(['nutgroup', 'nutrient'])
+
+def get_maximum(x):
+	return x.loc[x.value.idxmax()]
+
+max_foods = by_nutrient.apply(get_maximum)[['value', 'food']]
+max_foods.loc['Amino Acids']['food']
 ```
