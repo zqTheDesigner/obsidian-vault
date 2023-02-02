@@ -34,3 +34,4 @@ cat ~/.ssh/id_ed25519.pub # This will be same file location with just now the ke
 
 # Follow the documentation, copy the key and add to github page
 ```
+
