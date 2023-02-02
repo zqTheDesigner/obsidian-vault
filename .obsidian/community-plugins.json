@@ -1,8 +1,7 @@
 [
   "obsidian-format-code",
-  "obsidian-frontmatter-tag-suggest",
   "metadata-menu",
   "dataview",
   "obsidian-better-internal-link-inserter",
-  "obsidian-local-images"
+  "obsidian-frontmatter-tag-suggest"
 ]
