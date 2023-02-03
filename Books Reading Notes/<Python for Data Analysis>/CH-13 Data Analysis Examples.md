@@ -537,3 +537,62 @@ def get_maximum(x):
 max_foods = by_nutrient.apply(get_maximum)[['value', 'food']]
 max_foods.loc['Amino Acids']['food']
 ```
+
+# 13.5 2012 Federal Election Commission Database
+
+```python
+import pandas as pd
+
+fec = pd.read_csv('./datasets/fec/P00000001-ALL.csv', low_memory=False)
+
+fec.info()
+
+fec.iloc[123456]
+
+# Ger the unique candidates
+unique_cands = fec['cand_nm'].unique()
+unique_cands
+
+# Indicate party affiliation using dictionary
+parties = {
+  "Bachmann, Michelle": "Republican",
+  "Cain, Herman": "Republican",
+  "Gingrich, Newt": "Republican",
+  "Huntsman, Jon": "Republican",
+  "Johnson, Gary Earl": "Republican",
+  "McCotter, Thaddeus G": "Republican",
+  "Obama, Barack": "Democratic",
+  "Pawlenty, Timothy": "Republican",
+  "Paul, Ron": "Republican",
+  "Perry, Rick": "Republican",
+  "Roemer, Charles E. 'Buddy' III": "Republican",
+  "Romney, Mitt": "Republican",
+  "Santorum, Rick": "Republican"
+}
+
+# Use map method to compute the parties by candidate name:
+fec['cand_nm'][123456:124361].map(parties)
+
+fec['party'] = fec['cand_nm'].map(parties)
+
+fec['party'].value_counts()
+
+# Restrict the dataset to positive contributions
+fec = fec[fec['contb_receipt_amt'] > 0]
+
+# Create a sub set for the two main candidates
+fec_mrbo = fec[fec['cand_nm'].isin(['Obama, Barack', 'Romney, Mitt'])]
+
+
+```
+
+## Donation statistics by Occupation and Employer
+
+```python
+
+# total number of donations by occupation
+pd.options.display.max_rows = 100
+fec['contbr_occupation'].value_counts()[:100]
+
+occ_mapping = {'INFORMATION REQUESTED':'NOT PROVIDED', ''}
+```
