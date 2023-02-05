@@ -594,5 +594,68 @@ fec_mrbo = fec[fec['cand_nm'].isin(['Obama, Barack', 'Romney, Mitt'])]
 pd.options.display.max_rows = 100
 fec['contbr_occupation'].value_counts()[:100]
 
-occ_mapping = {'INFORMATION REQUESTED':'NOT PROVIDED', ''}
+occ_mapping = {
+    "INFORMATION REQUESTED PER BEST EFFORTS": "NOT PROVIDED",
+    "INFORMATION REQUESTED": "NOT PROVIDED",
+    "INFORMATION REQUESTED (BEST EFFORTS)": "NOT PROVIDED",
+    "C.E.O.": "CEO",
+}
+
+def get_occ(x):
+	# If no mapping provided, return x
+	return occ_mapping.get(x, x)
+
+fec['contbr_occupation'] = fec['contbr_occupation'].map(get_occ)
+
+emp_mapping = {
+    "INFORMATION REQUESTED PER BEST EFFORTS": "NOT PROVIDED",
+    "INFORMATION REQUESTED": "NOT PROVIDED",
+    "SELF": "SELF-EMPLOYED",
+    "SELF EMPLOYED": "SELF-EMPLOYED",
+}
+
+
+def get_emp(x):
+    # if no mapping provided, return x
+    return emp_mapping.get(x, x)
+
+
+fec["contbr_employer"] = fec["contbr_employer"].map(get_emp)
+
 ```
+
+Create a pivot table to display contb_receipt_amt, split by party, and show contbr_occupation as index
+#pivot-table 
+```python
+
+
+by_occupation = fec.pivot_table(
+    "contb_receipt_amt", index="contbr_occupation", columns="party", aggfunc="sum"
+)
+
+
+over_2mm = by_occupation[by_occupation.sum(axis='columns') > 2000000]
+
+over_2mm.plot(kind='barh')
+```
+
+Group by candidate name and use a variant of the top method 
+#pandas/groupby #pandas/groupby/apply 
+
+```python
+# Group by candidate name and use a variant of the top method 
+
+def get_top_amounts(group, key, n=5):
+	totals = group.groupby(key)["contb_receipt_amt"].sum()
+	return totals.nlargest(n)
+
+grouped = fec_mrbo.groupby('cand_nm')
+
+grouped.apply(get_top_amounts, 'contbr_occupation', n=7)
+
+grouped.apply(get_top_amounts, "contbr_employer", n=10)
+```
+
+
+## Bucketing Donation Amounts
+
