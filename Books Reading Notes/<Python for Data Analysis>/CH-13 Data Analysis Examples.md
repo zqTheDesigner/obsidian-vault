@@ -659,3 +659,44 @@ grouped.apply(get_top_amounts, "contbr_employer", n=10)
 
 ## Bucketing Donation Amounts
 
+Use cut function to discretize the contributor amounts in to buckets by contribution size
+
+```python
+bins = np.array([0, 1, 10, 100, 1000, 10000, 100_000, 1000_000, 10_000_000])
+
+labels = pd.cut(fec_mrbo["contb_receipt_amt"], bins)
+
+grouped = fec_mrbo.groupby(['cand_nm', labels])
+
+grouped.size().unstack(level=0)
+
+# Sum the contribution amounts and normalize within buckets to visualize the percentage of total donations of each size
+
+bucket_sums = grouped['contb_receipt_amt'].sum().unstack(level=0)
+normed_sums = bucket_sums.div(bucket_sums.sum(axis='columns'), axis='index')
+
+normed_sums.plot(kind='barh')
+```
+
+
+## Donation Statistics by State
+
+```python
+# Aggregating the data by candidate and state
+
+grouped = fec_mrbo.groupby(['cand_nm', 'contbr_st'])
+
+grouped.sum()
+
+totals = grouped['contb_receipt_amt'].sum().unstack(level=0).fillna(0)
+
+totals = totals[totals.sum(axis='columns') > 100000]
+
+totals.head()
+
+
+# Divide each row by total contribution amount to get the relative percenrage 
+
+percent = totals.div(totals.sum(axis='columns'), axis='index')
+percent.head()
+```

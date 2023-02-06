@@ -599,3 +599,4 @@ pd.crosstab(data['Nationality'], data['Handedness'], margins=True)
 
 pd.crosstab([tips['time'], tips['day']], tips['smoker'], margins=True)
 ```
+

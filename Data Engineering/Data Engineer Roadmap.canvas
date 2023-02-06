@@ -7,7 +7,8 @@
 		{"id":"034269b88793a815","x":-19,"y":-185,"width":261,"height":71,"type":"text","text":"[[Random Forest#For Time Series]]"},
 		{"id":"a84ad9f4e21ba405","x":288,"y":-179,"width":282,"height":60,"type":"text","text":"[[Gradient Boosting#For Time Series]]"},
 		{"id":"de6b9e8bce5f8aba","x":-1079,"y":-149,"width":199,"height":60,"type":"text","text":"KNN, K-Means, Iterative Imputation [[Data Mender Evaluation|evaluation]]"},
-		{"id":"ba7414c6f8ef8082","x":-1104,"y":-12,"width":250,"height":112,"type":"text","text":"Data Sets: \nWine Data - Numerical\nLabel data \nMixed (Titanic)\nTime Series"}
+		{"id":"ba7414c6f8ef8082","x":-1104,"y":6,"width":250,"height":112,"type":"text","text":"Data Sets: \nWine Data - Numerical\nLabel data \nMixed (Titanic)\nTime Series"},
+		{"id":"ef3ec82dd7a8463c","x":-1104,"y":176,"width":250,"height":60,"type":"text","text":"# Data Wrecker"}
 	],
 	"edges":[
 		{"id":"ca94cf5f45948db7","fromNode":"0ab2e9e9b99062a3","fromSide":"bottom","toNode":"034269b88793a815","toSide":"top"},
@@ -15,6 +16,7 @@
 		{"id":"00c170d401fefae6","fromNode":"3e0fd15650fa3203","fromSide":"bottom","toNode":"f134773b6686292f","toSide":"top"},
 		{"id":"1dc312296cb5862b","fromNode":"0ab2e9e9b99062a3","fromSide":"bottom","toNode":"a84ad9f4e21ba405","toSide":"top"},
 		{"id":"077b99bbbad7822b","fromNode":"3e0fd15650fa3203","fromSide":"bottom","toNode":"de6b9e8bce5f8aba","toSide":"top"},
-		{"id":"b6f6bb96aecbd76f","fromNode":"de6b9e8bce5f8aba","fromSide":"bottom","toNode":"ba7414c6f8ef8082","toSide":"top"}
+		{"id":"b6f6bb96aecbd76f","fromNode":"de6b9e8bce5f8aba","fromSide":"bottom","toNode":"ba7414c6f8ef8082","toSide":"top"},
+		{"id":"75c0c07bcc491ba4","fromNode":"ba7414c6f8ef8082","fromSide":"bottom","toNode":"ef3ec82dd7a8463c","toSide":"top"}
 	]
 }
