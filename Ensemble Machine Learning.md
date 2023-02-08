@@ -9,7 +9,7 @@ Involves training many high variance models on different samples of the training
 
 - Bagged Decision Trees
 - Random Subspaces
-- Random Forest
+- [[Random Forest]]
 - Extra Trees
 - Custom Bagging
 
