@@ -13,3 +13,6 @@ Trees used in ensemble are unpruned, making them slightly overfit to the trainin
 
 Time series data sets need to be [[Time Series Data Preparation#Transform in to supervisied learning problem|transformed in to a supervised learning problem]]. 
 
+The model must be trained on the past and predict the future.
+	Methods that randomize the dataset cannot be used (like k-fold cross-validation). 
+	We must use [[Walk-forward validation]] instead
