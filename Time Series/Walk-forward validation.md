@@ -9,3 +9,5 @@ to-read: https://machinelearningmastery.com/backtest-machine-learning-models-tim
 
 Reason we do this is because the random forest have to know the latest step and do the prediction, if we just train the model once and try to use the model predict all the rest of test data, the error rate will gets higher and higher. 
 
+
+
