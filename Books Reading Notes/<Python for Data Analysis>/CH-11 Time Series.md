@@ -1,5 +1,5 @@
 ---
-tags: timeseries, python/datetime, python/timedelta
+tags: time-series, python/datetime, python/timedelta
 ---
 Anything that is recorded repeatedly at many points in time forms a time series. 
 

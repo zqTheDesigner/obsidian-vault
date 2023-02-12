@@ -1,0 +1,1 @@
+Datasets where only a single variable is observed at each time, such as temperature each hour

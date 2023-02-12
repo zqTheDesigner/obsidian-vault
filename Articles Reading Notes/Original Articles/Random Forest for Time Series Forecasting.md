@@ -1,5 +1,5 @@
 ---
-tag: random-forest timeseries  
+tag: random-forest time-series  
 ---
 
 **Random Forest** is a popular and effective ensemble machine learning algorithm.
