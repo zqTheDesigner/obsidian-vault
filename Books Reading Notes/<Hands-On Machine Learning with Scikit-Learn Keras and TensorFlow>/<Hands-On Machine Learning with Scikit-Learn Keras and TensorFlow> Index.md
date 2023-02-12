@@ -5,7 +5,7 @@ publisher: O'Reilly
 
 # Part 1 The fundamentals of Machine Learning
 
-## 1. The Machine Learning Landscape
+## [[CH-1 The Machine Learning Landscape]]
 
 ## 2. End-to-End Machine Learning Project
 
