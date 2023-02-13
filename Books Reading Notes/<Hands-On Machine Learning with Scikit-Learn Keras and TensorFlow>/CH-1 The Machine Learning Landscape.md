@@ -25,8 +25,25 @@ whether they are trained with human supervision
 	- Support Vector Machines (SVMs)
 	- Decision Trees and Random Forests
 	- Neural Networks
-- Unsupervised Learning
-- SemiSupervised learning
+- [[Unsupervised Learning]]
+	- The training data is unlabeled, they system tries to learn without a teacher. 
+	- Clustering
+		- K-Means
+		- DBSCAN
+		- Hierarchical Cluster Analysis (HCA)
+	- [[Anomaly detection]] and [[Novelty detection]]
+		- One-class SVM
+		- Isolation Forest
+	- Visualization and [[Dimensionality Reduction]]
+		- Principal Component Analysis (PCA)
+		- Kernel PCA
+		- Locally Linear Embedding (LLE)
+		- t-Distributed Stochastic Neighbor Embedding (t-SNE)
+	- [[Association rule learning]]
+		- Apriori
+		- Eclat
+- [[Semi-supervised learning]]
+	- Deal with partially labeled data. 
 - Reinforcement Learning
 
 ## Online vs batch learning 

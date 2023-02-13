@@ -7,6 +7,8 @@ Related: [[Unsupervised Learning]]
 
 The training set you feed to the algorithm includes the desired solution (Labels)
 
+The labels here is the 'supervisor'.
+
 When we have a target variable (Label) to predict based on a given set of predictors or independent variables. 
 
 Use an algorithm to learn the mapping function from input variables (The predictor) (X) and output variable  (The label / target value) (y) 
