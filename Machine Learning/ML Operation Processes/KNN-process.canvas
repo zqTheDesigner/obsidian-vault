@@ -7,7 +7,7 @@
 		{"id":"0ecf2f821d2e4c88","x":-148,"y":-65,"width":250,"height":60,"type":"text","text":"Understand what data to choose for building model"},
 		{"id":"2c685d1dcb904068","x":-168,"y":80,"width":288,"height":240,"type":"text","text":"Data Preparation\n- Drop unnecessary data (for both training and testing)\n- Fill up missing data\n- Translate non-numerical features to numerical features (Categorical encoding)"},
 		{"id":"43c2a46e89d90a54","x":-180,"y":680,"width":315,"height":101,"type":"text","text":"k-nearest neighbours model\n[[KNN#The Code]]"},
-		{"id":"2f71048e249f2c5f","x":-169,"y":416,"width":292,"height":160,"type":"file","file":"Code Snippets/Data Splitting.md"},
+		{"id":"2f71048e249f2c5f","x":-169,"y":416,"width":292,"height":160,"type":"file","file":"Coding & Programming/Data Splitting.md"},
 		{"id":"8a7e6c025988832b","x":-147,"y":869,"width":250,"height":60,"type":"text","text":"Make predictions on out-of sample data"}
 	],
 	"edges":[
