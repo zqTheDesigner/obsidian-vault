@@ -44,13 +44,26 @@ whether they are trained with human supervision
 		- Eclat
 - [[Semi-supervised learning]]
 	- Deal with partially labeled data. 
-- Reinforcement Learning
+	- Most semi-supervised learning algorithms are combination of unsupervised and supervised algorithms.
+	- Deep belief networks (DBNs) are based on Restricted Boltzmann Machines (RBMs, unsupervised learning) stacked on top of each other. 
+- [[Reinforcement Learning]]
 
 ## Online vs batch learning 
-Learn incrementally or on the fly
+- Learn incrementally or on the fly.
+- Whether or not the system can learn incrementally from a stream of incoming data. 
+#### [[Batch learning]]
+- System is not capable for learning incrementally. It must be trained using all the available data. 
+- If you want a batch learning system to know about new data, a new system (with both new data and old data) have to be trained together from scratch then stop the old system and replace it with the new one.  
+- 
+#### [[Online Learning]] (Incremental learning)
+- Train the system incrementally by feeding it data instances sequentially (either individually or in small groups - mini-batches).
+- Online learning is great for systems that receive data as a continuous flow. 
+- Can also be used to train systems on huge datasets that cannot fit in one machine's main memory. (out-of-core learning)
+- Learning-rate - how fast they should adapt to changing data.
+- Higher learning rate make least new data faster and also forget older data faster. 
 
 ## Instance based vs model-based learning 
-Compare new data points with known data points or detecting patterns in the training data and building a predictive model
-
+- Compare new data points with known data points or detecting patterns in the training data and building a predictive model
+- 
 
 
