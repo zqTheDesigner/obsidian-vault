@@ -17,6 +17,12 @@ When a leave has the impurity of 0 (all data contains the same label), we won't 
 
 # Regression Tree
 When a decision tree predicts numeric values (E.g. Between x and y value, larger than x or below y)
+- Start from the average value between first and 2nd value, on the left, there is only 1 value (1st value), so the average is the value itself
+- On the right, there are all the rest of values (except the 1st value), we calculate the average.
+- On the right, the residual (value between predicted value and actual value) is higher
+- We calculate the squared residual on each average value between 2 points
+- And split the data into two groups by finding the threshold that gave us the smallest sum of squared residuals.
+- For multivariable prediction, each feature's residual will be calculated and compared, the feature with lowest residual will be choose as the root node. 
 
 # Impurity of a node
 If the leave contains more than one value, it is impure.
