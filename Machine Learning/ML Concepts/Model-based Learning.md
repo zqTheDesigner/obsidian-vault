@@ -1,10 +1,22 @@
-- Build a model of these examples and then use that model to make prediction.
+Related to [[Instance-based Learning]]
+
+- The system uses a model
+- Build (train) a model - It learns when the model is trained with data (predictors, examples)
+- The model performance is evaluated
+- Use the model to make prediction
 
 ## Process
 - Study the data
 - Select a model
-- Train the model on the training data
+- Train the model on the training data (predictors, examples)
 - Apply the model to make predictions 
+
+## Pros & Corns
+- Model can be stored / saved
+- No need to use all data
+- Takes less space than all data
+- The model is faster making predictions
+- Needs to train and evaluate a model
 
 ## Model selection
 
