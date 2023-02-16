@@ -61,9 +61,16 @@ whether they are trained with human supervision
 - Can also be used to train systems on huge datasets that cannot fit in one machine's main memory. (out-of-core learning)
 - Learning-rate - how fast they should adapt to changing data.
 - Higher learning rate make least new data faster and also forget older data faster. 
+- Bad data fed to system will decline the performance from time to time.
 
 ## Instance based vs model-based learning 
 - Compare new data points with known data points or detecting patterns in the training data and building a predictive model
+- How they generalize (make predictions for examples it has never seen before)
+#### [[Instance-based Learning]]
+- Requires a measure of similarity.
+- The system learns the examples by heart(??)
+#### [[Model-based Learning]]
+- Training a model means running an algorithm to find the model parameters that will make it best fit the training data. 
 - 
 
 

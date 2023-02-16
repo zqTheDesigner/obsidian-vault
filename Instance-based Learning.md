@@ -1,0 +1,3 @@
+- The system learns the examples by heart(??)
+- Then generalize to new cases by using similarity measure to compare them to the learned examples
+- 
