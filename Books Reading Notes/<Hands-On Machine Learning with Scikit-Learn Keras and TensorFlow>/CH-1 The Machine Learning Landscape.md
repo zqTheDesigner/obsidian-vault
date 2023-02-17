@@ -73,4 +73,9 @@ whether they are trained with human supervision
 - Training a model means running an algorithm to find the model parameters that will make it best fit the training data. 
 - 
 
+# Main Challenges of Machine Learning
 
+## Insufficient Quality of Training Data (Bad data)
+- Very different machine learning algorithms performed almost identically well on a complex problem of natural language disambiguation once they they were given enough data. 
+
+## Non-representative Training Data
