@@ -1,0 +1,3 @@
+- A parameter of the learning algorithm, not of the mode
+- Not affected by the learning algorithm itself
+- Must be set prior to training and remains constant during training

@@ -77,5 +77,36 @@ whether they are trained with human supervision
 
 ## Insufficient Quality of Training Data (Bad data)
 - Very different machine learning algorithms performed almost identically well on a complex problem of natural language disambiguation once they they were given enough data. 
+- The unreasonable effectiveness of data (More data always provide better quality predictions)
 
 ## Non-representative Training Data
+- Training data must be representative of the new cases you want to generalize to. 
+- Use a training set that is representative of the cases you want to generalize 
+- Smaller samples - [[Sampling Noise]]
+- Very large simple but non-representative, or simple method is flowed - [[Sampling Bias]] 
+
+## Poor-Quality Data
+- Discard the clearly outliers (or fix the errors manually)
+- For missing data - ignore attribute/ Ignore instance/ Filling the missing values/ Train one model with and one without the feature
+
+## Irrelevant Features
+- Training data have to contain enough relevant features and not too many irrelevant ones. 
+- To come up with a good set of features to train on - [[Feature Engineering]]
+	- Feature selection (Select the most useful features to train on among existing features)
+	- Feature extraction (Combining existing features to product a more useful one ([[Dimensionality Reduction]]))
+	- Creating new features by gathering new data
+
+## Over fitting the Training Data
+- Overgeneralizing 
+- When the model performs well on the training data, but doesn't generalize well. 
+- Simplify the mode by selecting fewer parameters can reduce the overfitting
+- Constraining a model to make it simpler and reduce the risk of overfitting - #regularization 
+- The amount of regularization to apply during learning can be controlled by a hyper-parameter
+- A [[Hyperparameter Tuning | Hyperparameter]] is a parameter of a learning algorithm (not of the model)
+
+## Under-fitting the Training Data 
+- Occurs when the model is too simple to learn the underlying structure of the data
+- To fix the under-fitting problem:
+	- Select a more powerful model. with more parameters
+	- Feed better features to the learning algorithm 
+	- Reduce the constrains on the model

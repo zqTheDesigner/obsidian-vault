@@ -1,0 +1,3 @@
+- When the samples / survey are designed poorly
+- When samples not representative enough (e.g. Missing at not random)
+- 
