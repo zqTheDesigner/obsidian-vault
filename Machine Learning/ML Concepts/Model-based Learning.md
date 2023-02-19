@@ -1,5 +1,7 @@
 Related to [[Instance-based Learning]]
 
+> Model based learning search for an optimal value for the [[Model Parameters]] such that the model will generalize well to new instances
+
 - The system uses a model
 - Build (train) a model - It learns when the model is trained with data (predictors, examples)
 - The model performance is evaluated
@@ -9,6 +11,7 @@ Related to [[Instance-based Learning]]
 - Study the data
 - Select a model
 - Train the model on the training data (predictors, examples)
+	- Train by minimizing the [[Model-based Learning#Cost function - Measure how bad the model performs|Cost function]] 
 - Apply the model to make predictions 
 
 ## Pros & Corns

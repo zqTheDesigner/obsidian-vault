@@ -2,7 +2,7 @@
 
 ### iPad preparation
 - Download iSH Shell App
-- [[Git - Install & Set up]]
+- [[Git  Setup]]
 
 ### Initialise iOS Obsidian vault via iSH git repo
 - iPad > Obsidian > Create a new vault, exit Obsidian 

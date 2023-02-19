@@ -1,3 +1,7 @@
+---
+tags: machine-learning
+---
+
 First machine learning application - spam filter (1990s)
 
 
@@ -10,6 +14,13 @@ Machine Learning is great for
 - Complex problems for which using a traditional approach yields no good solutions, Machine Learning technique can perhaps find a solution.
 - Fluctuating environments: a Machine Learning system can adapt to new data.
 - Getting insights about complex problems and large amounts of data. 
+
+# Machine Learning
+- Making machines get better at some task by learning from data instead of code rules
+- Types pf ML systems: Supervised or not, bath or online, instance based or model based
+- Gather data -> Feed training data to learning algorithms
+- Simple model -> underfit
+- Complex model -> overfit 
 
 # Types of Machine Learning Systems
 
@@ -96,7 +107,7 @@ whether they are trained with human supervision
 	- Feature extraction (Combining existing features to product a more useful one ([[Dimensionality Reduction]]))
 	- Creating new features by gathering new data
 
-## Over fitting the Training Data
+## [[Overfitting|Over fitting]] the Training Data
 - Overgeneralizing 
 - When the model performs well on the training data, but doesn't generalize well. 
 - Simplify the mode by selecting fewer parameters can reduce the overfitting
@@ -110,3 +121,21 @@ whether they are trained with human supervision
 	- Select a more powerful model. with more parameters
 	- Feed better features to the learning algorithm 
 	- Reduce the constrains on the model
+
+# Testing and [[Validating]]
+- To know how well a model will generalize to new cases
+- Split data in to training set and testing set
+- The error rate of new cases is called generalization error (out-of-sample error / test error)
+- Evaluate how model will perform on instances it has never seen before
+- If the training error is low, but the generalization error (test error) is high, it means the model is [[Overfitting|overfitting]] the training data. 
+- Training error : calculating the error of a model on the same data the model was trained on
+
+## [[Hyperparameter]] Tuning and Model Selection
+- To choose between multiple models - train multiple models and choose the model with lower generalization error
+- When apply regularization to avoid overfitting, the regularization applied may just suitable for the particular set (unlikely perform as well on new data)
+- Holdout validation: Hold out part of the training set to evaluate several candidate models and select the best one. 
+
+## Data Mismatch
+- Testing and validation data must be as representative as possible of the data in production
+- Train-dev set: holds some training data to validate of the model is over fitting. 
+- If performs well on train-dev set - not overfitting. If performs poorly on validation set - data mismatch 

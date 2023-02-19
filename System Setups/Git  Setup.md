@@ -1,16 +1,17 @@
-### Install git
+# Install git
 For linux and ios iSH app, use apk 
 ```sh
 apk add git
 ```
 
-### Set up username and email
+# Set up username and email
 ```sh
 git config --global user.name "zqthedesigner"
 git config --global user.email "zqthedesigner@gmail.com"
 ```
 
-### Set up ssh
+# Set up ssh
+#ssh
 [Generating new SSH key](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 [Adding a new SSH key to GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 

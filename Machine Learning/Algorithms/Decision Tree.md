@@ -43,7 +43,7 @@ Even a leaf is impure, still need an output value - the majority of the leaf.
 
 ![[Selection_001.png]]
 
-# Prevent [[Overfit| overfitting]]
+# Prevent [[Overfitting| overfitting]]
 If there is only very little data made to a leaf, it is hard to have confidence that it will do a great job on making the predictions. 
 Decision trees have the downside of often being overfit. 
 
