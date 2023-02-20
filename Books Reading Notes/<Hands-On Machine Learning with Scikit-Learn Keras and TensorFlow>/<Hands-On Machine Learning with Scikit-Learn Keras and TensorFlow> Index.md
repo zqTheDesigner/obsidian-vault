@@ -7,7 +7,7 @@ publisher: O'Reilly
 
 ## [[CH-1 The Machine Learning Landscape]]
 
-## 2. End-to-End Machine Learning Project
+## [[CH-2 End-to-End Machine Learning Project]]
 
 ## 3. Classification
 
