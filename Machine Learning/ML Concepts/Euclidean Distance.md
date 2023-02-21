@@ -1,0 +1,2 @@
+- Computing the root is a sum of squares (RMSE)
+- $l_2$ norm, or $||\cdot||_2$
