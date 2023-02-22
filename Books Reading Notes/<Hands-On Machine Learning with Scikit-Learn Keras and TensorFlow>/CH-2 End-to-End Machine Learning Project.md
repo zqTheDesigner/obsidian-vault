@@ -31,7 +31,7 @@ Places to get data:
 - [[Root Mean Square Error]] (RMSE)
 - [[Mean Absolute Error]] (MAE)
 - The higher the norm index, the more it focus on large vales and neglect small ones
-- RMSE is more sensitive to outliers than MAE
+- RMSE is more sensitive to outliers than MAE (To test)
 
 ## Check Assumptions
 - List and verify the assumptions that have been made
