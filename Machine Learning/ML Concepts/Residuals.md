@@ -1,0 +1,2 @@
+- The difference between the Observed and Predicted values
+- In [[Mean Absolute Error]] and [[Root Mean Square Error]], the Residuals are $h(x^{(i)}) - y^{(i)}$ part 

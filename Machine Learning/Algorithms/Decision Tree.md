@@ -51,7 +51,7 @@ Require each split to make a large reduction in impurity helps a tree from being
 
 Create a threshold such that the impurity reduction has to be large enough to make a big difference. 
 
-## Prune
+## [[Prune]]
 
 ## Put limits on how trees grow
 E.g. by request 3 or more people per leaf. 
