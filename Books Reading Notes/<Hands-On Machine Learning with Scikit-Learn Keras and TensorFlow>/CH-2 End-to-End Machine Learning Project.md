@@ -86,3 +86,9 @@ housing.info()
 	- Many histograms are tail-heavy (extended much farther to the right of the median than to the left), transforming to a more bell-shaped distributions will be better for Machine Learning algorithms
 
 ## Create a Test Set
+- Use crc32 to make sure the same set of test value will be split out even run the function multiple times. 
+- Use `train_test_split` from `sklearn.model_selection` with a fixed value of random state (e.g. 42), this will make sure each time run the function the  same test set been split out
+#### Stratified Sampling
+- The population is divided into homogeneous subgroups - strata, and the right number of instances are sampled from each stratum to guarantee that the test set is representative of the overall population.
+- Make sure the test set is representative of the most important feature
+- Then do stratified sampling based on the important category
