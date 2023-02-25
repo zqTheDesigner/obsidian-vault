@@ -2,6 +2,8 @@
 tags: classification, decision-tree
 ---
 
+[[Random Forest]]
+
 A decision tree makes a **statement**, and then makes a decision based on whether or not the statement is True or False (True will go left, False will go right)
 
 Different data types can be used in the same tree (e.g. numeric and boolean). Same questions can be asked multiple times with different numeric thresholds. 

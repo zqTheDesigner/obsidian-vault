@@ -88,7 +88,45 @@ housing.info()
 ## Create a Test Set
 - Use crc32 to make sure the same set of test value will be split out even run the function multiple times. 
 - Use `train_test_split` from `sklearn.model_selection` with a fixed value of random state (e.g. 42), this will make sure each time run the function the  same test set been split out
-#### Stratified Sampling
+#### [[Stratified Sampling]]
 - The population is divided into homogeneous subgroups - strata, and the right number of instances are sampled from each stratum to guarantee that the test set is representative of the overall population.
 - Make sure the test set is representative of the most important feature
 - Then do stratified sampling based on the important category
+``` Python
+from sklearn.model_selection import StratifiedShuffleSplit
+
+split = StratifiedShuffleSplit(n_splits=1, test_size=0.2, random_state=42)
+
+for train_index, test_index in split.split(housing, housing['income_cat']):
+    strat_train_set = housing.loc[train_index]
+    strat_test_set = housing.loc[test_index]
+    
+strat_test_set['income_cat'].value_counts() / len(strat_test_set)
+```
+
+- Remove any additional attribute in the data to keep its original state
+```python
+for set_ in (strat_test_set, strat_train_set):
+    set_.drop("income_cat", axis=1, inplace=True)
+```
+
+# Discover and Visualize the Data
+- To gain insights
+- Make sure you have put the test set aside and you are only exploring the training set
+
+## Visualizing Geographical data
+```python
+housing.plot(kind='scatter', x='longitude', y='latitude', alpha=0.1)
+```
+
+``` python
+housing.plot(kind='scatter', x='longitude', y='latitude', alpha=0.4, s=housing['population']/100, label='population', figsize=(10, 7), c='median_house_value', cmap=plt.get_cmap('jet'), colorbar=True)
+```
+- c is the color axis
+- cmap - color map
+
+- If the data have a clear density related to the features, a cluster algorithm can be used
+
+
+
+ 

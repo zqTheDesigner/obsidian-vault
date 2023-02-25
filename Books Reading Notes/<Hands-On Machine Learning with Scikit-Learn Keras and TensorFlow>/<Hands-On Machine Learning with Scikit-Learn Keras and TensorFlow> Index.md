@@ -6,6 +6,11 @@ publisher: O'Reilly
 # Part 1 The fundamentals of Machine Learning
 
 ## [[CH-1 The Machine Learning Landscape]]
+- [[Supervised Learning]] vs [[Unsupervised Learning]]
+- [[Online Learning]] vs [[Batch learning]]
+- [[Instance-based Learning]] cs [[Model-based Learning]]
+- [[Overfitting]]
+
 
 ## [[CH-2 End-to-End Machine Learning Project]]
 
