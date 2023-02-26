@@ -127,6 +127,81 @@ housing.plot(kind='scatter', x='longitude', y='latitude', alpha=0.4, s=housing['
 
 - If the data have a clear density related to the features, a cluster algorithm can be used
 
+## Looking for [[Feature Correlations|Correlations]]
 
+```python
+corr_matrix = housing.corr(numeric_only=True)
+corr_matrix['median_house_value'].sort_values(ascending=False)
+```
 
- 
+- The [[Feature Correlations|correlation coefficient]] only measures linear correlations, it may completely miss out on nonlinear relationships
+
+- Use `scatter_matrix()` to check the correlations between attributes (Plot every numerical value against every other numerical value)
+
+```python
+from pandas.plotting import scatter_matrix
+
+attributes = ["median_house_value", "median_income", "total_rooms", "housing_median_age"]
+
+scatter_matrix(housing[attributes], figsize=(12, 8))
+```
+
+![[Pasted image 20230226102229.png]]
+- To read the above scatter_matrix
+	- Identify the trend (median_income and median_house_value has a very strong correlation, because the linear trends)
+	- Identify some data quirks (e.g. the horizontal like on 450, 000 and 350, 000), these may need to be removed later to prevent algorithms learning form these.
+	- Identify the cap of 500, 000
+	- Identify the tail heavy trends, may want to transform them by computing their logarithm
+```python
+housing.plot(kind='scatter', x='median_income', y='median_house_value', alpha=0.06)
+```
+
+## Experimenting with Attribute Combinations
+- E.g. the total number of rooms in a district is not very useful if you don't know how many households there are. What you really want is the number of rooms per household. 
+- e.g. population per house or bedrooms compare with total rooms
+```python
+# Experimenting with attribute combinations
+housing['rooms_per_household'] = housing['total_rooms']/housing['households']
+housing['bedrooms_per_room'] = housing['total_bedrooms'] / housing['total_rooms']
+housing['population_per_household'] = housing['population']/housing['households']
+```
+
+# Prepare the Data for Machine Learning Algorithms
+- Write functions for this step
+	- To reproduce the same transformation on any other dataset
+	- Build a library of transformation functions that can be reused in future projects
+	- Use these functions in live system to transform the new data before feeding in to algorithms
+
+## Data Cleaning
+- Handling missing value
+	- Get rid of the corresponding districts `df.dropna(suibset=['feature_name'])`
+	- Get rid of the whole attribute `df.drop('feature_column', axis=1)`
+	- Set the value to some value
+```python
+median = housing['total_bedrooms'].median()
+housing['total_bedrooms'].fillna(median, inplace=True)
+
+# Use scikit learn Simple imputer
+from sklearn.impute import SimpleImputer
+imputer = SimpleImputer(strategy='median')
+
+housing_num = housing.drop('ocean_proximity', axis=1)
+imputer.fit(housing_num)
+```
+[[Scikit-Learn| Scikit-Learn Design]]
+
+## Handing Text and Categorical Attributes
+- To convert categorical value to numbers , use Scikit-Learn's OrdinalEncoder class
+```python
+from sklearn.preprocessing import OrdinalEncoder
+ordinal_encoder = OrdinalEncoder()
+
+housing_cat_encoded = ordinal_encoder.fit_transform(housing_cat)
+
+housing_cat_encoded[:10]
+```
+- To get a list of categories using the categories_ instance
+```python
+
+```
+

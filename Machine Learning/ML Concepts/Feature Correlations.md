@@ -7,6 +7,8 @@ corr_matrix = df_train.corr()
 corr_matrix['Survived'].sort_values(ascending=False)
 ```
 
+- The correlation coefficient only measures linear correlations, it may completely miss out on nonlinear relationships
+
 
 # Correlations between non-numerical features
 
