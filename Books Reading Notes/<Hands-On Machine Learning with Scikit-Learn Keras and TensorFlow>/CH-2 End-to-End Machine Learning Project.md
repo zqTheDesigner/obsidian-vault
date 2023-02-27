@@ -74,7 +74,7 @@ housing.info()
 - Check the amount of missing values
 - Check data types
 - Object data type can be any python object, but if it is from csv, it will be text
-- Fine any categorical attribute
+- Find any categorical attribute
 	- `housing['ocean_proximity'].value_counts()`
 - Use `describe()` to check the summary of other numerical attributes
 	- count, mean, min, max, [[Standard deviation]], [[Percentiles]]
@@ -202,6 +202,82 @@ housing_cat_encoded[:10]
 ```
 - To get a list of categories using the categories_ instance
 ```python
-
+ordinal_encoder.categories_
 ```
 
+- One-hot encoding
+```python
+from sklearn.preprocessing import OneHotEncoder
+
+cat_encoder = OneHotEncoder()
+
+housing_cat_1hot = cat_encoder.fit_transform(housing_cat)
+housing_cat_1hot
+```
+- `OneHotEncoder`'s categories can be found using (categories_)
+```python
+cat_encoder.categories_
+```
+- Output of OneHotEncoder is SciPy sparse matrix instead of a NumPy array.
+```python
+# To convert SciPy sparse to list
+housing_cat_1hot.toarray()
+```
+
+## Custom Transformers 
+#scikit-learn 
+
+[[Scikit-Learn#Custom Transformers]]
+
+- Make the transformer work seamlessly with Scikit-Learn functions
+- Create a class and implement fit (retruning self), transform() 
+- Adding TransformerMixin as base class to enable fit_transform method
+- Add BaseEstimater to avoid `*args` and `**kwargs`
+- BaseEstimater will provide two extra methods - `get_params()`, `set_params()`, useful for automatic hyperparameter tuning
+```python
+from sklearn.base import BaseEstimator, TransformerMixin
+
+rooms_ix, bedrooms_ix, population_ix, households_ix = 3, 4, 5, 6
+
+class CombineAttributesAdder(BaseEstimator, TransformerMixin):
+    # hyperparameters all goes inside __init__ function
+    def __init__(self, add_bedrooms_per_room = True):
+        self.add_bedrooms_per_room = add_bedrooms_per_room
+        
+    def fit(self, X, y=None):
+        return self # Nothing else to do
+        
+    def transform(self, X):
+        rooms_per_household = X[:, rooms_ix] / X[:, households_ix]
+        population_per_household = X[:, population_ix]/X[:, households_ix]
+        if self.add_bedrooms_per_room:
+            bedrooms_per_room = X[:, bedrooms_ix] / X[:, rooms_ix]
+            return np.c_[X, rooms_per_household, population_per_household, bedrooms_per_room]
+        else:
+            return np.c_[X, rooms_per_household, population_per_household]
+        
+        
+```
+
+## Feature Scaling
+#feature-scaling
+
+- One of the most important transformations you need to apply to your data
+- Machine Learning Algorithms don't perform well when the input numerical attributes have very different scales (with exceptions)
+- Scaling the target values is generally not required
+
+- Fit the scales to the training data only. not the full dataset
+- Then use them to transform the training set and the test set
+
+#### [[Min-max scaling (Normalization)]]
+- Values are shifted and re-scaled so that they end up ranging from 0 to 1
+- Subtracting the min value and dividing by the max minus min
+- Use Scikit-Learn's `MinMaxScaler` for this
+
+#### [[Standardization]]
+- Subtracts the mean value
+- Divided by the standard deviation so that the resulting distribution has unit variance
+- Does not bound values to specific range.
+- Less affected by outliers
+- Use Scikit-Learn's `StandardScaler` for standardization
+- 
