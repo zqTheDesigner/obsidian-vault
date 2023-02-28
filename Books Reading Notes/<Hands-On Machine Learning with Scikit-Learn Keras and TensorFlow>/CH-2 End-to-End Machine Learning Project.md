@@ -280,4 +280,43 @@ class CombineAttributesAdder(BaseEstimator, TransformerMixin):
 - Does not bound values to specific range.
 - Less affected by outliers
 - Use Scikit-Learn's `StandardScaler` for standardization
-- 
+
+## Transformation Pipelines
+- Use Scikit-Learn's Pipeline class for sequences of transformations
+```python
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+
+num_pipeline = Pipeline([
+    ('imputer', SimpleImputer(strategy='median')),
+    ('attribs_adder', CombineAttributesAdder()),
+    ('std_scaler', StandardScaler())
+])
+
+housing_num_tr = num_pipeline.fit_transform(housing_num)
+```
+
+- Pipeline constructor takes a list of name/estimator pairs defining a sequence of steps
+- Except the last estimator, all must be transformers (they must have a fit_transform() method)
+- When call `Pipeline.fit()`, it calls fit_transform sequentially on all transformers till reach the final estimator, will call the fit() method of the final estimator. 
+- Use `ColumnTransformer` class to handle categorical columns and numerical columns separaterly.
+```python
+from sklearn.compose import ColumnTransformer
+
+num_attribs = list(housing_num)
+cat_attribs = ['ocean_proximity']
+
+full_pipeline = ColumnTransformer([
+    ('num', num_pipeline, num_attribs),
+    ('cat', OneHotEncoder(), cat_attribs)
+])
+
+housing_prepared = full_pipeline.fit_transform(housing)
+```
+- `OneHotEncoder` returns a [[sparse matrix]]
+- `num_pipeline` returns a [[dense matrix]]
+- ColumnTransformer estimates the density of the final matrix (e.g. the ratio of none-zero cells), if the density is lower than a given threshold (default 0.3) it returns a dense matrix
+
+# Select and Train a model
+
+## Training and evaluating on the Training set
