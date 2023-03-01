@@ -320,3 +320,94 @@ housing_prepared = full_pipeline.fit_transform(housing)
 # Select and Train a model
 
 ## Training and evaluating on the Training set
+
+```python
+from sklearn.linear_model import LinearRegression
+
+lin_reg = LinearRegression()
+lin_reg.fit(housing_prepared, housing_labels)
+```
+
+- All new data present to the model have to go through `full_pipeline` to get prepared
+```python
+some_data = housing.iloc[:5]
+some_labels = housing_labels.iloc[:5]
+
+some_data_prepared = full_pipeline.transform(some_data)
+
+lin_reg.predict(some_data_prepared)
+```
+
+- Compute the RMSE of the prediction (with original data)
+- If the RMSE is high, means the data is under-fitted with the training data - the features do not provide enough information to make good predictions, or model is not powerful enough.
+
+```python 
+from sklearn.metrics import mean_squared_error
+
+housing_predictions = lin_reg.predict(housing_prepared)
+
+lin_mse = mean_squared_error(housing_labels, housing_predictions)
+
+lin_rmse = np.sqrt(lin_mse)
+
+lin_rmse
+```
+
+```python
+from sklearn.tree import DecisionTreeRegressor
+
+tree_reg = DecisionTreeRegressor()
+
+tree_reg.fit(housing_prepared, housing_labels)
+
+housing_predictions = tree_reg.predict(housing_prepared)
+
+tree_mse = mean_squared_error(housing_labels, housing_predictions)
+
+tree_rmse = np.sqrt(tree_mse)
+```
+
+## Better Evaluation Using Cross-Validation
+
+- Split the training set into a smaller training set and a validation set
+- Train the models against the smaller training set and evaluate them against the validation set   
+- Use Scikit-Learn's K-fold cross-validation feature
+- Use `joblib` to sture model as pickle file
+
+```python
+import joblib
+joblib.dump(lin_reg, 'ling_reg.pkl')
+
+my_model_loaded = joblib.load('ling_reg.pkl')
+```
+
+## Grid Search
+- Suitable for relatively few combinations
+- To find the great combination of hyperparameter values 
+- It will use cross-validation to evaluate all the possible combinations
+```python
+from sklearn.model_selection import GridSearchCV
+from sklearn.ensemble import RandomForestRegressor
+
+param_grid = [
+    {'n_estimators':[3, 10, 30], 'max_features':[2, 4, 6, 8]},
+    {'bootstrap':[False], 'n_estimators':[3, 10], 'max_features':[2, 3, 4]}
+]
+
+forest_reg = RandomForestRegressor()
+
+grid_search = GridSearchCV(forest_reg, param_grid, cv=5, scoring='neg_mean_squared_error', return_train_score=True)
+
+grid_search.fit(housing_prepared, housing_labels)
+```
+
+- To get the best parameter combination - `grid_search.best_params_`
+- To get the best estimator - `grid_search.best_estimator_`
+- To get all cv results - `grid_search.cv_results_`
+
+## Randomized Search
+- Use in same way as GridSearchCV class
+- Evaluates a given number of random combinations 
+
+## Ensemble Methods
+- Combine models that perform best
