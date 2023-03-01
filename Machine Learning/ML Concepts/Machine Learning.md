@@ -6,3 +6,7 @@
 - Use testing data to measure the performance (evaluate) of the models built from training data
 
 - [[Bias-Variance Tradeoff]] - Fitting the Training Data well but making poor predictions
+
+[[Cross Validation]]
+
+[[Confusion Matrix]]
