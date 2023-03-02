@@ -411,3 +411,45 @@ grid_search.fit(housing_prepared, housing_labels)
 
 ## Ensemble Methods
 - Combine models that perform best
+
+### Analyze the Best Model and Their Errors
+- Indicate the relative importance of each attribute
+- Use RandomForestRegressor's  `feature_imoirtances_` method 
+```python
+feature_importance = grid_search.best_estimator_.feature_importances_
+
+extra_attribs = ["rooms_per_hhold", "pop_per_hhold", "bedrooms_per_room"]
+cat_encoder = full_pipeline.named_transformers_['cat']
+cat_one_hot_attribs = list(cat_encoder.categories_[0])
+
+attributes = num_attribs + extra_attribs + cat_one_hot_attribs
+sorted(zip(feature_importance, attributes), reverse=True)
+```
+### Evaluate Your System on the Test Set
+- Evaluate the final model with the test set
+- Run `full_pipeline` to transform the data
+- Evaluate the final model
+```python
+final_model = grid_search.best_estimator_
+
+X_test = strat_test_set.drop('median_house_value', axis=1)
+y_test = strat_test_set['median_house_value'].copy()
+
+X_test_prepared = full_pipeline.transform(X_test)
+
+final_predictions = final_model.predict(X_test_prepared)
+
+final_mse = mean_squared_error(y_test, final_predictions)
+
+final_rmse = np.sqrt(final_mse)
+```
+
+- Compute a [[95% confidence interval]] for the generalization error
+- How precise the estimate is
+```python
+from scipy import stats
+confidence = 0.95
+
+squared_errors = (final_predictions - y_test) ** 2
+np.sqrt(stats.t.interval(confidence, len(squared_errors) -1, loc=squared_errors.mean(), scale=stats.sem(squared_errors)))
+```
