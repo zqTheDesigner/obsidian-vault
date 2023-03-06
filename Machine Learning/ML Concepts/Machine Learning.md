@@ -7,6 +7,9 @@
 
 - [[Bias-Variance Tradeoff]] - Fitting the Training Data well but making poor predictions
 
-[[Cross Validation]]
+# [[Cross Validation]]
 
-[[Confusion Matrix]]
+# [[Confusion Matrix]]
+- ## [[Confusion Matrix#Sensitivity|Sensitivity]]
+- ## [[Confusion Matrix#Specificity|Specificity]]
+
