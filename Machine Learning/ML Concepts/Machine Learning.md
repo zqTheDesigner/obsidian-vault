@@ -13,3 +13,7 @@
 - ## [[Confusion Matrix#Sensitivity|Sensitivity]]
 - ## [[Confusion Matrix#Specificity|Specificity]]
 
+- # [[Bias]]
+- # [[Variance]]
+- Ideal model have low bias and low variance
+
