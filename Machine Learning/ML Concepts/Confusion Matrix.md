@@ -1,5 +1,7 @@
 - Rows in a Confusion Matrix Correspond to what the machine learning algorithm predicted
 - Columns correspond to the known truth
+- Confusion matrix is for measure [[Classification]] prediction quality
+- 
 ![[Selection_024.png]]
 
 - The size of the confusion matrix is determined by the number of things we want to predict
