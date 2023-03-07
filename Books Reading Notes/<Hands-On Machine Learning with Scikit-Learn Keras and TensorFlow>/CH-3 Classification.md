@@ -1,4 +1,4 @@
----
+c---
 tags: classification
 ---
 
@@ -25,6 +25,7 @@ plt.imshow(some_digit_image, cmap='binary')
 
 # Training a Binary Classifier
 - Only try to identify one digit (e.g. number 5)
+- [[Stochastic Gradient Descent (SGD)]]
 ```python
 # True for all 5s and false for all other digits
 y_train_5 = (y_train == 5)
@@ -54,3 +55,37 @@ sgd_clf.predict([some_digit])
 - In the binary case, we can extract true positives, etc as follows:
 	- `tn, fp, fn, tp = confusion_matrix([0, 1, 0, 1], [1, 1, 1, 0]).ravel()`
 - sklearn's confusion matrix started with true negative
+- [[Confusion Matrix#Precision|Precision]] - Accuracy of the positive predictions
+$$
+	precision=\frac{TP}{TP+FP}
+$$
+- [[Confusion Matrix#Sensitivity/Recall|Recall]] - Percentage of positive cases that are correctly detected
+$$
+	recall=\frac{TP}{TP+FN}
+$$
+```python
+from sklearn.metrics import precision_score, recall_score
+
+precision_score(y_train_5, y_train_pred)
+recall_score(y_train_5, y_train_pred)
+```
+### $F_1$ Score
+-  Combine precision and recall in to a single metric
+- Harmonic mean of precision and recall (harmonic mean gives more weight to low values)
+- The classifier will only get a high F1 score if both recall and precision are high
+$$
+F_1 = \frac2{
+{\frac1{prevision} + 
+{\frac1{recall}}}
+} = 2\times \frac{prexision \times recall}{precision + recall}
+= \frac{TP}{TP + \frac {FN + FP}2}
+$$
+
+```python
+from sklearn.metrics import f1_score
+f1_score(y_train_5, y_train_pred)
+```
+
+## Precision / Recall Trade-off
+
+- For SGDClassifier, lowering the threshold increases recall and reduces precision 

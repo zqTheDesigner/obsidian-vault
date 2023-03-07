@@ -4,18 +4,35 @@ tags: classification, decision-tree
 
 [[Random Forest]]
 
-A decision tree makes a **statement**, and then makes a decision based on whether or not the statement is True or False (True will go left, False will go right)
+- A [[Parametric & Non-parametric Algorithms#Non-parametric algorithms|non-parametric]] [[Supervised Learning]] method, used for [[Classification]] and [[Regression]]
 
-Different data types can be used in the same tree (e.g. numeric and boolean). Same questions can be asked multiple times with different numeric thresholds. 
+- A decision tree is a model that predicts the value of a target variable (Label) by learning simple decision rules from the data features
 
-Final classification can be repeated. 
+- A decision tree makes a **statement**, and then makes a decision based on whether or not the statement is True or False (True will go left, False will go right)
+- Different data types can be used in the same tree (e.g. numeric and boolean). Same questions can be asked multiple times with different numeric thresholds. 
+- Final classification can be repeated. 
+- Numeric thresholds (If the value it bigger or small than certain value, split to group a, else split to group b) can be different for the same data.
 
-Numeric thresholds (If the value it bigger or small than certain value, split to group a, else split to group b) can be different for the same data. 
+- The deeper the tree, the mode complex the decision rules and the fitter the model. 
+- Over complex trees that do not generalize the data well - [[Overfitting]]
+
+# Advantages of decision trees
+- Simple to understand and interpret, trees can be visualized
+- Little data preparation
+- Not support missing values
+- The cost of using the tree (prediction) is logarithmic in the number of data points used to train the tree
+- Able to handle both numerical data and categorical data
+- White box model
+
+# Disadvantage of decision trees
+- Prediction trees are neither smooth nor continuous
+- Not good at [[Extrapolation]]
+- Over complex trees may not generalize the data well
 
 # Classification Tree
-When decision tree classifies things into categories
+- When decision tree classifies things into categories
 
-When a leave has the impurity of 0 (all data contains the same label), we won't split the leaf any more. And the output value can be assigned to the leave (the category has the most values.)
+- When a leaf has the impurity of 0 (all data contains the same label), we won't split the leaf any more. And the output value can be assigned to the leave (the category has the most values.)
 
 # Regression Tree
 When a decision tree predicts numeric values (E.g. Between x and y value, larger than x or below y)
@@ -69,3 +86,11 @@ If a feature doesn't used in any branch, it will be automatically ignored - auto
 - Find the highest correlation feature and refer to the high correlation feature
 - Replace value with mean or median
 - Find the highest correlation feature, and do a linear regression
+
+
+# Sklearn Decision Tree
+- `from sklearn.tree import DecisionTreeClassifier`
+	- Capable of multi-class classification
+	- use `Graphviz` to visualize the tree
+	- 
+- `from sklearn.tree import DecisionTreeRegressor`

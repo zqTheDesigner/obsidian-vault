@@ -17,3 +17,6 @@
 - # [[Variance]]
 - Ideal model have low bias and low variance
 
+# [[ROC (Receiver Operator Characteristics)]]
+
+# [[AUC (Area under the curve)]] 
