@@ -13,10 +13,12 @@
 - ## [[Confusion Matrix#Sensitivity|Sensitivity]]
 - ## [[Confusion Matrix#Specificity|Specificity]]
 
-- # [[Bias]]
-- # [[Variance]]
+- ## [[Bias]]
+- ## [[Variance]]
 - Ideal model have low bias and low variance
 
-# [[ROC (Receiver Operator Characteristics)]]
+- ## [[ROC (Receiver Operator Characteristics)]]
+- ## [[AUC (Area under the curve)]] 
 
-# [[AUC (Area under the curve)]] 
+# [[Entropy]]
+
