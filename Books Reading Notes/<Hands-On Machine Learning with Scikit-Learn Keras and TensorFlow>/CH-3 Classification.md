@@ -89,3 +89,94 @@ f1_score(y_train_5, y_train_pred)
 ## Precision / Recall Trade-off
 
 - For SGDClassifier, lowering the threshold increases recall and reduces precision 
+```python
+from sklearn.metrics import precision_recall_curve
+
+precisions, recalls, threshold = precision_recall_curve(y_train_5, y_scores)
+
+def plot_precision_recall_vs_threshold(precisions, recalls, threshold):
+    plt.plot(threshold, precisions[:-1], 'b--', label='Precision')
+    plt.plot(threshold, recalls[:-1], 'g-', label='Recall')
+    
+plot_precision_recall_vs_threshold(precisions, recalls, threshold)
+plt.show()
+```
+
+- To find the thresholds to use for a specific precision
+```python
+# Get a lost of sgd_clf scores with cross val prediction (with training data)
+y_scores = cross_val_predict(sgd_clf, X_train, y_train_5, cv=3, method='decision_function')
+
+precisions, recalls, thresholds = precision_recall_curve(y_train_5, y_scores)
+
+threshold_90_precision = thresholds[np.argmax(precisions >= 0.9)]
+
+# Re-label the training set based on new threshold 
+y_train_pred_90 = (y_scores >= threshold_90_precision)
+```
+
+# The [[ROC (Receiver Operator Characteristics)|ROC]] Curve
+- Receiver Operating Characteristic Curve
+- Used by binary classifiers
+- Similar to precision/recall curve, plots true positive rate ([[Confusion Matrix#Recall|Recall]]) against false positive rate (FPR)
+- FPR is 1 - TNR (True negative rate, [[Confusion Matrix#Specificity|Specificity]])
+
+```python
+from sklearn.metrics import roc_curve
+
+fpr, tpr, thresholds = roc_curve(y_train_5, y_scores)
+
+plt.plot(fpr, tpr, linewidth=2, label=['fpr', 'tpr'])
+plt.plot([0,1],[0,1], 'k--')
+```
+
+- The higher recall (TPR), the more false positives (FPR) the classifier produces
+
+
+## [[AUC (Area under the curve)]]
+
+- Compare classifier's ROC
+- A perfect classifier will have a ROC AUC equals to 1, a purely random classifier will have the ROC AUC equals to 0.5
+```python
+from sklearn.metrics import roc_auc_score
+roc_auc_score(y_train_5, y_scores)
+```
+
+- Use (Precision/recall)PR curve when the positive calss is rare, or when care more about the false positives than false negatives. Otherwise use ROC curve. 
+- 
+
+### Train a RandomForestClassifier
+
+```python
+from sklearn.ensemble import RandomForestClassifier
+
+forest_clf = RandomForestClassifier(random_state=42)
+
+# predict_proba method will return a pair of positive, negative probability
+y_probas_forest = cross_val_predict(forest_clf, X_train, y_train_5, cv=3, method='predict_proba')
+
+# Take the positive class's probability as the score
+y_score_forest = y_probas_forest[:, 1]
+
+fpr_forest, tpr_forest, thresholds_forest = roc_curve(y_train_5, y_score_forest)
+
+plt.plot(fpr, tpr, 'b:', label='SGD')
+plt.plot(fpr_forest, tpr_forest, label='Random Forest')
+plt.plot([0,1], [0,1])
+plt.legend(loc='lower right')
+```
+
+# Multiclass Classification
+- Multinomial Classifiers, distinguish between more than two classes
+- [[Stochastic Gradient Descent (SGD)|SGD classifiers]], [[Random Forest]] classifiers and [[naive Bayes]] classifiers are capable of handling multiple classes   
+- [[Logistic Regression]] or [[Support Vector Machine]] classifiers are strictly binary classifiers
+- Multiclass classification can be performed with multiple binary classifiers
+
+### OvR strategy
+- One-versus-the-rest
+- Train 10 binary classifiers, one for each digit, get the decision score from each classifier and the output is the highest score
+
+### OvO strategy
+- One-versus-one
+- Train a binary classifier of every pair of digits. 
+- If there are N classes , you need to train N x (N-1) /2 classifiers

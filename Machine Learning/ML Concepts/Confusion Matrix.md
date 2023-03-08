@@ -10,7 +10,7 @@
 ![[Pasted image 20230307160013.png]]
 
 
-# Sensitivity/Recall
+# Sensitivity / Recall / True Positive Rate 
 - Percentage of positive cases that are correctly detected 
 - Works together with precision
 - (Horizontally compare)
@@ -25,7 +25,7 @@ $$
 Sensitivity = \frac{True Positives}{True Positives + False Negatives}
 $$
 
-# Specificity
+# Specificity / True Negative Rate
 - Percentage of correctly identified negative cases
 $$
 Specificity = \frac{True Negatives}{True Negatives + False Positives}

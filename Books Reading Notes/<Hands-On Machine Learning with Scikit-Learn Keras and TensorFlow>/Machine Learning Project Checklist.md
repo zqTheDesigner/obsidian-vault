@@ -25,4 +25,10 @@
 - K-fold validation (evaluate different model)
 - Grid search (evaluate different hyperparameters)
 - Use `joblib.dump()` to save the model
-- 
+
+
+# Binary Classifier
+- Choose the appropriate metrics for the task
+- Evaluate the classifier using cross validation
+- select the prevision/recall trade off that fits the needs
+- Use ROC curves or ROC AUC scores to compare the various models
