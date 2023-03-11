@@ -1,6 +1,7 @@
 ---
 author: Aurelien Geron
 publisher: O'Reilly
+tags: book, reading
 ---
 
 # Part 1 The fundamentals of Machine Learning

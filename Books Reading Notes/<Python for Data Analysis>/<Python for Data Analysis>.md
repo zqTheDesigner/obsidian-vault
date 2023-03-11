@@ -2,6 +2,7 @@
 publisher: O'Reilly
 completed: 2023-Feb-06
 started: 2022-Dec-08
+tags: book, completed
 ---
 
 # [[CH-8 Data Wraggling Join, Combine and Reshape]]
