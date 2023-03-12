@@ -1,4 +1,4 @@
-c---
+---
 tags: classification
 ---
 
@@ -286,3 +286,26 @@ plt.subplot(222); plot_digits(X_ab[:25], images_per_row = 5)
 
 
 ```
+
+# Multilabel Classification
+- Classification system that outputs multiple binary tags. 
+- KNeighborsClassifier() supports multi label classification
+``` python
+from sklearn.neighbors import KNeighborsClassifier
+knn_clf = KNeighborsClassifier()
+knn_clf.fit(X_train, y_multilabel)
+
+knn_clf.predict([some_digit])
+```
+- To evaluate a multilabel classifier
+```python
+from sklearn.model_selection import cross_val_predict
+from sklearn.metrics import f1_score
+
+y_train_knn_pred = cross_val_predict(knn_clf, X_train, y_multilabel, cv=3)
+f1_score(y_multilabel, y_train_knn_pred, average='macro')
+```
+
+# Multioutput Classification
+- A generalization of multilabel classification where each label can be multi class (have more than two possible values)
+- 
